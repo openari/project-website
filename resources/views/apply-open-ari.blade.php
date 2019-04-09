@@ -34,7 +34,7 @@
                                 <div id="couponaccordion" class="collapse" data-parent="#checkOutAccordion">
                                     <div class="card-body">
                                         <div class="apply-coupon-wrapper">
-                                            <p>目前OPEN-ARI 實驗計畫，採邀約制 <a href="register-open-ari.html"> 填寫申請資料 </a></p>
+                                            <p>目前OPEN-ARI 實驗計畫，採邀約制 <a href="{{ url('/register-open-ari') }}"> 填寫申請資料 </a></p>
                                         </div>
                                     </div>
                                 </div>

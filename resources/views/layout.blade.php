@@ -130,6 +130,81 @@
 
 @yield('content')
 
+<!--== Start Off Canvas Area Wrapper ==-->
+<aside class="off-canvas-area-wrapper">
+    <!-- Off Canvas Overlay -->
+    <div class="off-canvas-overlay"></div>
+
+    <!-- Start Off Canvas Content Area -->
+    <div class="off-canvas-content-wrap">
+        <div class="off-canvas-content">
+            <!-- Start Search Box Wrap -->
+            <div class="search-box-wrap off-canvas-item">
+                <form action="#" method="post">
+                    <input type="search" placeholder="Search.."/>
+                    <button class="btn-search"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Start About Content Wrap -->
+            <div class="about-content off-canvas-item">
+                <h2>Who We Are</h2>
+                <p>Organic seitan post-ironic, four loko bicycle rights art party tousled. Mlkshk tote bag
+                    stumptown.</p>
+            </div>
+
+            <!-- Start Useful Links Content -->
+            <div class="useful-link-wrap off-canvas-item">
+                <h2>Useful Links</h2>
+
+                <ul class="useful-link-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Start Social Links Content -->
+            <div class="social-links-wrap off-canvas-item">
+                <h2>Connect</h2>
+
+                <div class="social-links">
+                    <a href="#" class="trio-tooltip" data-tippy-content="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="trio-tooltip" data-tippy-content="Twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="trio-tooltip" data-tippy-content="Pinterest"><i class="fa fa-pinterest"></i></a>
+                    <a href="#" class="trio-tooltip" data-tippy-content="Instagram"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Off Canvas Close Icon -->
+        <button class="btn-close trio-tooltip" data-tippy-content="Close" data-tippy-placement="left"><i
+                class="fa fa-close"></i></button>
+    </div>
+    <!-- End Off Canvas Content Area -->
+</aside>
+<!--== End Off Canvas Area Wrapper ==-->
+
+<!--== Start Off Canvas Area Wrapper ==-->
+<aside class="off-canvas-responsive-menu">
+    <!-- Off Canvas Overlay -->
+    <div class="off-canvas-overlay"></div>
+
+    <!-- Start Off Canvas Content Area -->
+    <div class="off-canvas-content-wrap">
+        <div class="off-canvas-content">
+
+        </div>
+        <!-- Off Canvas Close Icon -->
+        <button class="btn-close trio-tooltip" data-tippy-content="Close" data-tippy-placement="right"><i
+                class="fa fa-close"></i></button>
+    </div>
+    <!-- End Off Canvas Content Area -->
+</aside>
+<!--== End Off Canvas Area Wrapper ==-->
+
 <!--== Start Footer Area Wrapper ==-->
 <footer class="footer-wrapper">
     <!-- Start Footer Widget Area -->

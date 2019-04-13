@@ -138,11 +138,11 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         {!! Captcha::display() !!}
 
                         <div class="single-input-item m-0 justify-content-center align-items-center">
-                                <button class="btn btn-black" type="submit">送出</button>
+                                <button class="btn btn-brand w-100 mt-26" type="submit">送出</button>
                         </div>
                     </div>
                 </form>

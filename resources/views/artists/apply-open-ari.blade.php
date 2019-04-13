@@ -86,7 +86,7 @@
                                 {!! Captcha::display() !!}
 
                                 <div class="single-input-item">
-                                    <button type="submit" class="btn btn-full btn-black mt-26">送出</button>
+                                    <button type="submit" class="btn btn-brand w-100 mt-26">送出</button>
                                 </div>
                             </form>
                         </div>

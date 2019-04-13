@@ -21,125 +21,154 @@
 <div class="page-wrapper">
     <section class="cart-page-area-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="checkout-page-coupon-area">
-                        <!-- Alert Start -->
-                        <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                <strong>buffer</strong> You should check in on some of those fields below.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                        </div>
-                        <!-- Alert End -->
-                    </div>
-                </div>
-            </div>
+            <form action="{{ action('ArtController@store_step1') }}" method="post">
+                {{ csrf_field() }}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="checkout-page-coupon-area">
 
-            <div class="row">
-                 <div class="checkout-billing-details-wrap col-lg-12">
-                        <h2><strong>buffer </strong>歡迎您的加入</h2>
-                    </div>
-                 <div class="col-lg-4">
-                    <!-- Cart Calculate Area -->
-                    <div class="cart-calculate-area mt-sm-30 mt-md-30">
-                        <h5 class="cal-title">申請步驟</h5>
+                            <!-- Message Start -->
+                            @if (session('message'))
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <strong>{{ session('message') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
+                            <!-- Message End -->
 
-                        <div class="cart-cal-table table-responsive">
-                            <table class="table table-borderless">
-                                <tr class="shipping">
-                                    <th>步驟</th>
-                                    <td>
-                                        <ul class="shipping-method">
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="flat_shipping" name="shipping_method"
-                                                           class="custom-control-input" checked/>
-                                                    <label class="custom-control-label" for="step">第一步 關於物件基本資料</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="free_shipping" name="shipping_method"
-                                                           class="custom-control-input"/>
-                                                    <label class="custom-control-label" for="step">第二步 關於物件的說明</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="cod_shipping" name="shipping_method"
-                                                           class="custom-control-input"/>
-                                                    <label class="custom-control-label" for="step">第三步 關於物件的保存</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="cod_shipping" name="shipping_method"
-                                                           class="custom-control-input"/>
-                                                    <label class="custom-control-label" for="step">第四步 物件路徑與圖片預覽</label>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="">
-                                    <th>單位</th>
-                                    <td>早安設計有限公司</td>
-                                </tr>
-                            </table>
+                            <!-- Alert Start -->
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $error }}</strong>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endforeach
+                            @endif
+                            <!-- Alert End -->
+
+                            <!-- Alert Start -->
+                            <!--
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <strong>{{ session('artist')->name }}</strong> You should check in on some of those fields below.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div> -->
+                            <!-- Alert End -->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                            <div class="billing-form-wrap">
-                                <div class="single-input-item">
-                                        <label for="f_name_2" class="required">物品類型</label>
-                                        <input type="text" id="f_name" placeholder="物品屬於何類？（如，繪畫、雕刻、時鐘、面具等）" required/>
-                                </div>
-                                <div class="single-input-item">
-                                        <label for="l_name_2" class="required">材料</label>
-                                        <input type="text" id="l_name" placeholder="物品是用什麼材料製作的？（如，黃銅、木材、帆布、油畫等）" required/>
-                                 </div>
 
-                                <div class="single-input-item">
-                                    <label for="com-name" class="required">技術</label>
-                                    <input type="text" id="com-name" placeholder="物品是怎樣製作的？（如，雕刻、燒鑄、蝕刻等）"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">度量</label>
-                                    <input type="text" id="phone" placeholder="物品大小 和/或 重量是多少？ EX.10M or 20.3KG"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">編號或標誌</label>
-                                    <input type="text" id="phone" placeholder="物品大小 和/或 重量是多少？ EX.10M or 20.3KG"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">突出的特徵</label>
-                                    <input type="text" id="phone" placeholder="物品上是否有能夠幫助辨認的任何有形特徵？（如破損、修補或製作上的缺陷）"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">標題</label>
-                                    <input type="text" id="phone" placeholder="物品上是否有為人所知、或供辨認的標題？（如，《The Scream》呼救）"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">題材</label>
-                                    <input type="text" id="phone" placeholder="物品描述或反映了什麼？（如，風景、戰鬥、抱小孩的婦女 ）"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">日期或時代</label>
-                                    <input type="text" id="phone" placeholder="物品製作的時間（如1893年、十七世紀初、青銅器時代末期）"/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">製作者</label>
-                                    <input type="text" id="phone" placeholder="物品製作者是誰？藝術家、公司組織或文化群體（如：Hopis）"/>
-                                </div>
-                            </div>
-                            <div class="proceed-checkout-btn">
-                                <a href="{{ url('/register-step2-open-ari') }}" class="btn btn-brand d-block">下一步</a>
-                            </div>
+                <div class="row">
+                    <div class="checkout-billing-details-wrap col-lg-12">
+                        <h2><strong>{{ session('artist')->name }}</strong> 歡迎您的加入</h2>
                     </div>
+                    <div class="col-lg-4">
+                        <!-- Cart Calculate Area -->
+                        <div class="cart-calculate-area mt-sm-30 mt-md-30">
+                            <h5 class="cal-title">申請步驟</h5>
 
-            </div>
+                            <div class="cart-cal-table table-responsive">
+                                <table class="table table-borderless">
+                                    <tr class="shipping">
+                                        <th>步驟</th>
+                                        <td>
+                                            <ul class="shipping-method">
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="flat_shipping" name="shipping_method"
+                                                               class="custom-control-input" checked/>
+                                                        <label class="custom-control-label" for="step">第一步 關於物件基本資料</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="free_shipping" name="shipping_method"
+                                                               class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="step">第二步 關於物件的說明</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="cod_shipping" name="shipping_method"
+                                                               class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="step">第三步 關於物件的保存</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="cod_shipping" name="shipping_method"
+                                                               class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="step">第四步 物件路徑與圖片預覽</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="">
+                                        <th>申請人/單位</th>
+                                        <td>{{ session('artist')->name }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="billing-form-wrap">
+                            <div class="single-input-item">
+                                    <label for="type_of_object" class="required">物品類型</label>
+                                    <input type="text" id="type_of_object" name="type_of_object" placeholder="物品屬於何類？（如，繪畫、雕刻、時鐘、面具等）" value="{{ session('newart.identification.type_of_object') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                    <label for="materials" class="required">材料</label>
+                                    <input type="text" id="materials" name="materials" placeholder="物品是用什麼材料製作的？（如，黃銅、木材、帆布、油畫等）" value="{{ session('newart.identification.materials') }}" required/>
+                             </div>
+
+                            <div class="single-input-item">
+                                <label for="techniques" class="required">技術</label>
+                                <input type="text" id="techniques" name="techniques" placeholder="物品是怎樣製作的？（如，雕刻、燒鑄、蝕刻等）" value="{{ session('newart.identification.techniques') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="measurements" class="required">度量</label>
+                                <input type="text" id="measurements" name="measurements" placeholder="物品大小 和/或 重量是多少？ EX.10M or 20.3KG" value="{{ session('newart.identification.measurements') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="inscriptions_and_markings" class="required">編號或標誌</label>
+                                <input type="text" id="inscriptions_and_markings" name="inscriptions_and_markings" placeholder="物品大小 和/或 重量是多少？ EX.10M or 20.3KG" value="{{ session('newart.identification.inscriptions_and_markings') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="distinguishing_features" class="required">突出的特徵</label>
+                                <input type="text" id="distinguishing_features" name="distinguishing_features" placeholder="物品上是否有能夠幫助辨認的任何有形特徵？（如破損、修補或製作上的缺陷）" value="{{ session('newart.identification.distinguishing_features') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="title" class="required">標題</label>
+                                <input type="text" id="title" name="title" placeholder="物品上是否有為人所知、或供辨認的標題？（如，《The Scream》呼救）" value="{{ session('newart.identification.title') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="subject" class="required">題材</label>
+                                <input type="text" id="subject" name="subject" placeholder="物品描述或反映了什麼？（如，風景、戰鬥、抱小孩的婦女 ）" value="{{ session('newart.identification.subject') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="date_or_period" class="required">日期或時代</label>
+                                <input type="text" id="date_or_period" name="date_or_period" placeholder="物品製作的時間（如1893年、十七世紀初、青銅器時代末期）" value="{{ session('newart.identification.date_or_period') }}" required/>
+                            </div>
+                            <div class="single-input-item">
+                                <label for="maker" class="required">製作者</label>
+                                <input type="text" id="maker" name="maker" placeholder="物品製作者是誰？藝術家、公司組織或文化群體（如：Hopis）" value="{{ session('newart.identification.maker') }}" required/>
+                            </div>
+                        </div>
+                        <div class="proceed-checkout-btn">
+                            <button type="submit" class="btn btn-brand d-block w-100">下一步</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 </div>

@@ -81,4 +81,26 @@ class APIService {
         return 'failed';
     }
 
+    public function register_art($invitationCode, $identification, $ownership) {
+        $body = [
+            'invitation_code' => $invitationCode,
+            'identification' => $identification,
+            'ownership' => $ownership,
+        ];
+
+        $response = $this->client->post($this->endpoint.'/arts', [
+            'body' => json_encode($body),
+            'debug' => false,
+            'http_errors' => false,
+        ]);
+
+        Log::info('API Service /arts '.$response->getStatusCode().$response->getBody());
+
+        if ($response->getStatusCode() === 201) {
+            return 'success';
+        }
+
+        return 'failed';
+    }
+
 }

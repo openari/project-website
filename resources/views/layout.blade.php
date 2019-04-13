@@ -329,6 +329,8 @@
 
 @stack('modals')
 
+@stack('scripts')
+
 <!--=======================Javascript============================-->
 <!--=== All Vendor Js ===-->
 <script src="assets/js/vendor.js"></script>

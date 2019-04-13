@@ -21,99 +21,118 @@
 <div class="page-wrapper">
     <section class="cart-page-area-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="checkout-page-coupon-area">
-                        <!-- Alert Start -->
-                        <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                <strong>buffer</strong> You should check in on some of those fields below.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                        </div>
-                        <!-- Alert End -->
-                    </div>
-                </div>
-            </div>
+            <form action="{{ action('ArtController@store_step4') }}" method="post">
+                {{ csrf_field() }}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="checkout-page-coupon-area">
 
-            <div class="row">
-                 <div class="checkout-billing-details-wrap col-lg-12">
-                        <h2><strong>buffer </strong>歡迎您的加入</h2>
-                    </div>
-                 <div class="col-lg-4">
-                    <!-- Cart Calculate Area -->
-                    <div class="cart-calculate-area mt-sm-30 mt-md-30">
-                        <h5 class="cal-title">申請步驟</h5>
+                            <!-- Alert Start -->
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $error }}</strong>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endforeach
+                            @endif
+                            <!-- Alert End -->
 
-                        <div class="cart-cal-table table-responsive">
-                            <table class="table table-borderless">
-                                <tr class="shipping">
-                                    <th>步驟</th>
-                                    <td>
-                                        <ul class="shipping-method">
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="flat_shipping" name="shipping_method"
-                                                           class="custom-control-input"/>
-                                                    <label class="custom-control-label" for="step">第一步 關於物件基本資料</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="free_shipping" name="shipping_method"
-                                                           class="custom-control-input"/>
-                                                    <label class="custom-control-label" for="step">第二步 關於物件的說明</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="cod_shipping" name="shipping_method"
-                                                           class="custom-control-input"/>
-                                                    <label class="custom-control-label" for="step">第三步 關於物件的保存</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="cod_shipping" name="shipping_method"
-                                                           class="custom-control-input" checked/>
-                                                    <label class="custom-control-label" for="step">第四步 物件路徑與圖片預覽</label>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="">
-                                    <th>單位</th>
-                                    <td>早安設計有限公司</td>
-                                </tr>
-                            </table>
+                            <!-- Alert Start -->
+                            <!--
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <strong>buffer</strong> You should check in on some of those fields below.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div> -->
+                            <!-- Alert End -->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                            <div class="single-input-item">
-                                        <div class="single-input-item">
-                                            <strong>SHA3 指紋碼綁定您的物件</strong></label>
-                                        </div>
-                                        <div class="single-input-item">
-                                            依照 Object ID 協定拍照對於確認物品極其重要，除了全貌以外，還應對銘文，標誌以及破損或修補部位進行特別拍照。如果可能，還應在圖像中附上與原物的比例與實物。
-                                        </div>
-                                        <div class="single-input-item">
-                                            <label for="f_people" class="required">您的物件連結</label>
-                                        <input type="text" id="f_people" placeholder="http://xxx.xxx.xx" required/>
-                                        </div>
-                                        <div class="single-input-item">
-                                            <label for="f_people" class="required">作品圖片</label>
-                                        <input type="text" id="f_people" placeholder="上傳圖片" required/>
-                                        </div>
-                                         <div class="proceed-checkout-btn m-2 float-left">
-                                            <a href="#" class="btn btn-black">送出</a>
-                                        </div>
-                                        <div class="proceed-checkout-btn m-2 float-left">
-                                            <a href="#" class="btn btn-black">取消</a>
-                                        </div>
+
+                <div class="row">
+                     <div class="checkout-billing-details-wrap col-lg-12">
+                            <h2><strong>{{ session('artist')->name }}</strong> 歡迎您的加入</h2>
+                        </div>
+                     <div class="col-lg-4">
+                        <!-- Cart Calculate Area -->
+                        <div class="cart-calculate-area mt-sm-30 mt-md-30">
+                            <h5 class="cal-title">申請步驟</h5>
+
+                            <div class="cart-cal-table table-responsive">
+                                <table class="table table-borderless">
+                                    <tr class="shipping">
+                                        <th>步驟</th>
+                                        <td>
+                                            <ul class="shipping-method">
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="flat_shipping" name="shipping_method"
+                                                               class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="step">第一步 關於物件基本資料</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="free_shipping" name="shipping_method"
+                                                               class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="step">第二步 關於物件的說明</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="cod_shipping" name="shipping_method"
+                                                               class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="step">第三步 關於物件的保存</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="cod_shipping" name="shipping_method"
+                                                               class="custom-control-input" checked/>
+                                                        <label class="custom-control-label" for="step">第四步 物件路徑與圖片預覽</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="">
+                                        <th>申請人/單位</th>
+                                        <td>{{ session('artist')->name }}</td>
+                                    </tr>
+                                </table>
                             </div>
-                            <div class="shopping-cart-table table-responsive p-2">
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="single-input-item">
+                                    <div class="single-input-item">
+                                        <strong>SHA3 指紋碼綁定您的物件</strong></label>
+                                    </div>
+                                    <div class="single-input-item">
+                                        依照 Object ID 協定拍照對於確認物品極其重要，除了全貌以外，還應對銘文，標誌以及破損或修補部位進行特別拍照。如果可能，還應在圖像中附上與原物的比例與實物。
+                                    </div>
+                                    <!--
+                                    <div class="single-input-item">
+                                        <label for="f_people" class="required">您的物件連結</label>
+                                        <input type="text" id="f_people" placeholder="http://xxx.xxx.xx" required/>
+                                    </div>
+                                     -->
+                                    <div class="single-input-item">
+                                        <label for="f_people" class="">作品圖片</label>
+                                    <input type="text" id="f_people" placeholder="上傳圖片"/>
+                                    </div>
+                                     <div class="proceed-checkout-btn m-2 float-left">
+                                        <a href="#" class="btn btn-black">送出</a>
+                                    </div>
+                                    <div class="proceed-checkout-btn m-2 float-left">
+                                        <a href="#" class="btn btn-black">取消</a>
+                                    </div>
+                        </div>
+                        <div class="shopping-cart-table table-responsive p-2">
                             <table class="table table-bordered text-center">
                                 <thead>
                                 <tr>
@@ -142,13 +161,15 @@
                                 </tr>
                                 </tbody>
                             </table>
-                           <div class="proceed-checkout-btn">
-                            <a href="{{ url('/your-open-ari') }}" class="btn btn-brand d-block">完成</a>
-                    </div>
-                        </div>
-                </div>
+                            {!! Captcha::display() !!}
+                            <div class="proceed-checkout-btn">
 
-            </div>
+                                <button type="submit" class="btn btn-brand d-block w-100">完成</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 </div>

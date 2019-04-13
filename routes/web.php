@@ -19,10 +19,19 @@ Route::post('/artists-apply', 'ArtistController@apply');
 Route::get('/artists-register', 'ArtistController@create');
 Route::post('/artists-register', 'ArtistController@store');
 
+
 Route::get('/register-step1-open-ari', 'ArtController@create_step1');
+Route::post('/register-step1-open-ari', 'ArtController@store_step1');
+
 Route::get('/register-step2-open-ari', 'ArtController@create_step2');
+Route::post('/register-step2-open-ari', 'ArtController@store_step2');
+
 Route::get('/register-step3-open-ari', 'ArtController@create_step3');
+Route::post('/register-step3-open-ari', 'ArtController@store_step3');
+
 Route::get('/register-step4-open-ari', 'ArtController@create_step4');
+Route::post('/register-step4-open-ari', 'ArtController@store_step4');
+
 
 Route::get('/your-open-ari', function () {return view('your-open-ari'); });
 Route::get('/showcase-open-ari', function () {return view('showcase-open-ari'); });

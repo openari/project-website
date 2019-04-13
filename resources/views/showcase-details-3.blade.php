@@ -9,7 +9,11 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="page-header-content d-flex">
-                    <h1>我要申請</h1>
+                    <h5></h5>
+                    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="查詢 作品" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
                 </div>
             </div>
         </div>
@@ -19,111 +23,86 @@
 
 <!--== Start Page Content Wrapper ==-->
 <div class="page-wrapper">
-    <div class="checkout-area-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
+    <div class="blog-details-content-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
-            <form action="#" method="post">
             <div class="row">
-                <div class="col-12">
-                    <div class="checkout-page-coupon-area">
-                        <!-- Checkout Coupon Accordion Start -->
-                        <div class="checkoutAccordion" id="checkOutAccordion">
-                            <div class="card">
-                                <h3><i class="fa fa-info-circle"></i>  <span data-toggle="collapse"
-                                                                                           data-target="#couponaccordion">已經有邀請碼嗎?</span>
-                                </h3>
-                                <div id="couponaccordion" class="collapse" data-parent="#checkOutAccordion">
-                                    <div class="card-body">
-                                        <div class="apply-coupon-wrapper">
-                                            <p>謝謝您與我們一起，開始體驗 OPEN-ARI 實驗計劃 <a href="apply-open-ari.html"> 前往輸入邀請碼 </a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Checkout Coupon Accordion End -->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                    <div class="checkout-billing-details-wrap col-lg-12">
-                        <h2>我要申請</h2>
-                    </div>
-                    <div class="col-lg-6">
-                    <!-- Checkout Form Area Start -->
-                            <div class="billing-form-wrap">
-                                <div class="single-input-item">
-                                        <label for="f_name_2" class="required">名</label>
-                                        <input type="text" id="f_name" placeholder="First Name" required/>
-                                </div>
-                                <div class="single-input-item">
-                                        <label for="l_name_2" class="required">姓</label>
-                                        <input type="text" id="l_name" placeholder="Last Name" required/>
-                                 </div>
 
-                                <div class="single-input-item">
-                                    <label for="com-name" class="required">申請人單位</label>
-                                    <input type="text" id="com-name" placeholder="Company Name"/>
+            <div class="col-lg-12">
+                    <div class="single-sidebar-item-wrap">
+                            <h1 class="sidebar-title">作品碼 xcr3456789</h1>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav mr-auto">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/showcase-details') }}">標示 <span class="sr-only">(current)</span></a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/showcase-details-2') }}">所有權</a>
+                                      </li>
+                                      <li class="nav-item active">
+                                        <a class="nav-link" href="#">認證典藏</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/showcase-details-4') }}">指向</a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                 <div class="proceed-checkout-btn m-2 float-left">
+                                            <a href="{{ url('/apply-feedback-open-ari') }}" class="btn btn-black">檢舉</a>
+                                        </div>
+                                        <div class="proceed-checkout-btn m-2 float-left">
+                                            <a href="{{ url('/apply-modified-open-ari') }}" class="btn btn-black">異動</a>
+                                        </div>
                                 </div>
-                                <div class="single-input-item">
-                                    <label for="phone" class="required">聯絡電話</label>
-                                    <input type="text" id="phone" placeholder="Phone"/>
+                            </nav>
+                             <div class="single-input-item">
+                                        <h5>ARI 認證典藏部分，目前尚未公開。</h5>
+                                        <p>認證典藏-面對真偽以及藝術盜竊和學術研究等需求，方便藝術品貿易，保險業以及藝術和古董評估師，保留合作開發的空間，希望未來透過各個博物館，典藏單位，藝廊等與各方合作。</p>
                                 </div>
-                                <div class="single-input-item">
-                                    <label for="oganization" class="required">我是</label>
-                                    <select name="oganization" id="oganization">
-                                        <option value="artist">藝術家或創作者</option>
-                                        <option value="media">藝評媒體</option>
-                                        <option value="mesuem">美術館或展覽空間</option>
-                                        <option value="gallery">藝廊</option>
-                                    </select>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="col-lg-6">
-                            <div class="billing-form-wrap">
-                                <div class="single-input-item">
-                                    <label for="street-address" class="required">地址</label>
-                                    <input type="text" id="street-address" placeholder="Street address Line 1"
-                                           required/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="town" class="required">縣市</label>
-                                    <input type="text" id="town" placeholder="Town / City" required/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="postcode" class="required">郵遞區號</label>
-                                    <input type="text" id="postcode" placeholder="Postcode / ZIP" required/>
-                                </div>
-                                <div class="single-input-item">
-                                    <label for="ordernote">簡述申請原因</label>
-                                    <textarea name="ordernote" id="ordernote" cols="60" rows="3"
-                                              placeholder="Notes about your application, e.g. 創作者或單位"></textarea>
-                                </div>
-                                <div class="checkout-box-wrap">
-                                    <div class="single-input-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="create_pwd">
-                                            <label class="custom-control-label" for="create_pwd">我了解 OPEN-ARI 相關計畫與隱私權條款</label>
+                                 <div class="comment-box-form mt-48">
+                            <h5>有興趣請與我們聯絡</h5>
+                            <form action="#">
+                                <div class="row row-20">
+                                    <div class="col-12">
+                                        <div class="form-input-item mb-20">
+                                            <textarea name="comments" id="comments" cols="30" rows="5"
+                                                      placeholder="Comment*" required></textarea>
                                         </div>
                                     </div>
-                                    <div class="account-create single-form-row">
-                                        <p>關於您註冊或使用本服務時所提供之個人資料，本實驗計畫將依「隱私權保護政策」為蒐集、處理、利用與保護。</p>
+
+                                    <div class="col-md-4 mb-sm-20">
+                                        <div class="form-input-item">
+                                            <input type="text" placeholder="Name*" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-sm-20">
+                                        <div class="form-input-item">
+                                            <input type="email" placeholder="Email*" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-input-item mb-20">
+                                            <input type="url" placeholder="Website"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-brand w-100">Submit</button>
                                     </div>
                                 </div>
-                            </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="single-input-item m-0 justify-content-center align-items-center">
-                                <button class="btn btn-black">送出</button>
+                            </form>
                         </div>
+                        <hr>
                     </div>
                 </div>
             </div>
-            </form>
         </div>
     </div>
 </div>
 <!--== End Page Content Wrapper ==-->
+
 @endsection
 
 @push('modals')

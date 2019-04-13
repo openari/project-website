@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'api' => [
+        'endpoint' => env('API_ENDPOINT', 'https://api.open-ari.art'),
+        'token' => env('API_TOKEN', ''),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

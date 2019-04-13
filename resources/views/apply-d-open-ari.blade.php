@@ -3,14 +3,13 @@
 @section('headerOptions', 'black-header header-padding')
 
 @section('content')
-
 <!--== Start Page Header Area ==-->
 <div class="page-header-wrapper bg-offwhite">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="page-header-content d-flex">
-                    <h1>輸入邀請碼</h1>
+                    <h1>指向申請</h1>
                 </div>
             </div>
         </div>
@@ -26,18 +25,9 @@
                 <div class="col-12">
                     <div class="checkout-page-coupon-area">
                         <!-- Checkout Coupon Accordion Start -->
-                        <div class="checkoutAccordion" id="checkOutAccordion">
+                        <div class="checkoutAccordion">
                             <div class="card">
-                                <h3><i class="fa fa-info-circle"></i> 沒有邀請碼嗎? <span data-toggle="collapse"
-                                                                                           data-target="#couponaccordion">我要申請</span>
-                                </h3>
-                                <div id="couponaccordion" class="collapse" data-parent="#checkOutAccordion">
-                                    <div class="card-body">
-                                        <div class="apply-coupon-wrapper">
-                                            <p>目前OPEN-ARI 實驗計畫，採邀約制 <a href="{{ url('/register-open-ari') }}"> 填寫申請資料 </a></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3 class="float-left">作品碼：xcr3456789 |  作品碼連結：http://xcr3456789</h3>
                             </div>
                         </div>
                         <!-- Checkout Coupon Accordion End -->
@@ -46,26 +36,65 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6">
                     <!-- Checkout Form Area Start -->
-                    <div class="checkout-billing-details-wrap">
-                        <h2>輸入我的邀請碼</h2>
-                        <div class="billing-form-wrap">
-                            <form action="#" method="post">
-                                <div class="single-input-item">
-                                    <label for="f_name" class="required">邀請碼</label>
-                                    <input type="text" id="invited_code" placeholder="邀請碼" required/>
-                                </div>
-
-                                <div class="single-input-item">
-                                    <button class="btn btn-full btn-black mt-26">送出</button>
-                                </div>
-                            </form>
+                        <div class="col-lg-12 checkout-billing-details-wrap">
+                            <h2>指向申請</h2>
+                            <div class="single-input-item">
+                                <h3>目前實驗計畫期間，需經過審核。</h3>
+                                <p>針對作品碼所指向的作品，回應，轉述，詮釋等其他需指向回本作品碼的各式公開連結，都可在此申請並對作品碼做附加。
+                                秉持公開精神，任何單位只要是公共公開連結都能在此申請指向但因本專案為實驗階段有預算限制，本欄位需經審核。</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-
+                        <div class="col-lg-6 billing-form-wrap">
+                                <div class="single-input-item">
+                                    <label for="street-address" class="required">申請人/單位</label>
+                                    <input type="text" id="street-address" placeholder="姓名或單位名稱"
+                                           required/>
+                                </div>
+                                <div class="single-input-item">
+                                    <label for="town" class="required">電子郵件</label>
+                                    <input type="text" id="town" placeholder="Email" required/>
+                                </div>
+                                <div class="single-input-item">
+                                    <label for="postcode" class="required">主要聯繫電話</label>
+                                    <input type="text" id="postcode" placeholder="02-2343-2343" required/>
+                                </div>
+                        </div>
+                        <div class="col-lg-6 billing-form-wrap">
+                            <div class="single-input-item">
+                                    <label for="postcode" class="required">標題</label>
+                                    <input type="text" id="postcode" placeholder="標題" required/>
+                            </div>
+                            <div class="single-input-item">
+                                    <label for="postcode" class="required">指向連結</label>
+                                    <input type="text" id="postcode" placeholder="http://xxx.xxx.x" required/>
+                            </div>
+                            <div class="single-input-item">
+                                    <label for="ordernote">描述</label>
+                                    <textarea name="ordernote" id="ordernote" cols="60" rows="3"
+                                              placeholder="簡單描述指向的目的"></textarea>
+                                </div>
+                                <div class="checkout-box-wrap">
+                                    <div class="single-input-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="create_pwd">
+                                            <label class="custom-control-label" for="create_pwd">我了解 指向連結，如有修改或更動將會失效</label>
+                                        </div>
+                                    </div>
+                                    <div class="account-create single-form-row">
+                                        <p>我們針對備存原始檔案會產生數位指紋碼，核心系統內只會將數位指紋碼存取於區塊鏈上，申請方自行備存的檔案如有修改將會導致數位指紋碼失效。
+我們以此數位指紋碼提供物件申請作品碼時在確保檔案辨識時使用。</p>
+<p>數位指紋碼：我們使用指紋碼技術，透過指紋碼將原檔案經 SHA3-512 做指紋碼比對防止串改，而這份存在區塊鏈上的作品名冊只會存入附件連結與指紋碼，以判定連結是否有效。SHA-3第三代安全雜湊演算法(Secure Hash Algorithm 3) 相關說明： https://zh.wikipedia.org/wiki/SHA-3
+</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single-input-item m-0 justify-content-center align-items-center">
+                                <button class="btn btn-black m-2"> < 上一頁</button><button class="btn btn-black m-2">送出</button>
+                            </div>
+                        </div>
             </div>
         </div>
     </div>

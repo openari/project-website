@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="page-header-content layout--2 d-flex">
-                    <h1>Portfolio</h1>
+                    <h1>最新申請作品</h1>
                 </div>
             </div>
         </div>
@@ -45,16 +45,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_02.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Hardcover Book Cover</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Hardcover Book Cover</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -66,16 +66,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_06.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Flying Macbook</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Flying Macbook</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -87,16 +87,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_05.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Floating Card</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Floating Card</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -108,16 +108,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_10.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Tri-O Typeface</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Tri-O Typeface</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -129,16 +129,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_02.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Hardcover Book Cover</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Hardcover Book Cover</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -150,16 +150,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_06.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Flying Macbook</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Flying Macbook</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -171,16 +171,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_02.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Hardcover Book Cover</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Hardcover Book Cover</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -192,16 +192,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_06.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Flying Macbook</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Flying Macbook</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -213,16 +213,16 @@
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
                                         <img src="assets/img/portfolio/portfolio_05.jpg" alt="Portfolio Image"/>
-                                        <a href="portfolio-details.html" class="btn-view-work"><i
+                                        <a href="{{ url('/showcase-details') }}" class="btn-view-work"><i
                                                 class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">
                                         <div class="port-info">
-                                            <h3><a href="portfolio-details.html">Floating Card</a></h3>
+                                            <h3><a href="{{ url('/showcase-details') }}">Floating Card</a></h3>
                                             <nav class="nav portfolio-cate">
-                                                <a href="portfolio-details.html">Design</a>
-                                                <a href="portfolio-details.html">Photography</a>
+                                                <a href="{{ url('/showcase-details') }}">Design</a>
+                                                <a href="{{ url('/showcase-details') }}">Photography</a>
                                             </nav>
                                         </div>
                                     </div>

@@ -10,4 +10,19 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function captchaCheck() {
+
+      $response = Input::get('g-recaptcha-response');
+      $remoteip = $_SERVER['REMOTE_ADDR'];
+      $secret = env('RE_CAP_SECRET');
+
+      $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+      $resp = $recaptcha->verify($response, $remoteip);
+      if ($resp->isSuccess()) {
+        return true;
+      }
+      return false;
+    }
+
 }

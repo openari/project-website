@@ -30,7 +30,7 @@
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="preloader-active">
@@ -59,7 +59,7 @@
             <!-- Start Logo Area Wrap -->
             <div class="col-6 col-lg-2 col-xl-3 text-center text-lg-left">
                 <a href="{{ url('/') }}" class="logo-wrap d-block">
-                    <img src="assets/img/logo-white.png" alt="White Logo"/>
+                    <!-- <img src="assets/img/logo-white.png" alt="White Logo"/> -->
                     <img src="assets/img/logo-black.png" class="sticky-logo" alt="Black Logo"/>
                 </a>
             </div>
@@ -71,12 +71,12 @@
                     <div class="navigation-area-wrap d-none d-lg-block">
                         <nav class="main-navigation">
                             <ul class="main-menu nav justify-content-end">
-                                <li class="dropdown-navbar"><a href="{{ url('/about-me') }}">關於</a>
+                                <li class="dropdown-navbar"><a href="{{ url('/about') }}">關於</a>
                                 </li>
-                                <li class="dropdown-navbar arrow"><a href="#">加入</a>
+                                <li class="dropdown-navbar arrow"><a href="#">作品碼申請</a>
                                     <ul class="dropdown-nav">
-                                        <li><a href="{{ url('/apply-open-ari') }}">輸入邀請碼</a></li>
-                                        <li><a href="{{ url('/register-open-ari') }}">我要申請</a></li>
+                                        <li><a href="{{ url('/artists-apply') }}">輸入邀請碼</a></li>
+                                        <li><a href="{{ url('/register-step1-open-ari') }}">作品碼申請表</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-navbar full-width"><a href="{{ url('/showcase-open-ari') }}">查詢</a>

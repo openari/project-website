@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+
 <!-- Start Hero Slider Area Wrapper -->
 <div class="slider-area-wrapper fix">
     <div id="rev_slider_13_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="classic-agency"
@@ -29,7 +30,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 5; white-space: nowrap; font-size: 140px; line-height: 140px; font-weight: 700; color: rgba(255,255,255,1);letter-spacing:0;">
-                        Bold Design
+                         OPEN-ARI
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -45,7 +46,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 6; min-width: 700px; max-width: 700px; white-space: normal; font-size: 18px; line-height: 24px; font-weight: 600; color: rgba(255,255,255,1);">
-                        Responsive & retina ready, Tri-o looks professional and elegant on all devices and screen sizes.
+                         ARI (藝術作品資源識別碼)系統之實驗計畫，透過作品申請作品碼結合區塊鏈技術與第三方交易平台實驗數位交易行為
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -86,7 +87,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 5; white-space: nowrap; font-size: 90px; line-height: 110px; font-weight: 700; color: rgba(255,255,255,1);letter-spacing:0">
-                        TRENDY DESIGN
+                        Decentraliztion
                     </div>
 
                     <!-- LAYER NR. 5 -->
@@ -102,7 +103,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 6; min-width: 700px; max-width: 700px; white-space: normal; font-size: 18px; line-height: 24px; font-weight: 600; color: rgba(255,255,255,1);">
-                        Integration of brands into content creation & activation, experience & interactive design.
+                        去中心化是種新的信任關係，正是跨越障礙，平息恐懼與顛覆各種不可能的橋樑，對未來環境產生新的想像。
                     </div>
 
                     <!-- LAYER NR. 7 -->
@@ -143,7 +144,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 5; white-space: nowrap; font-size: 90px; line-height: 110px; font-weight: 700; color: rgba(255,255,255,1);letter-spacing:0.3em;">
-                        MINIMALISM
+                         Blackchain
                     </div>
 
                     <!-- LAYER NR. 9 -->
@@ -159,7 +160,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 6; min-width: 700px; max-width: 700px; white-space: normal; font-size: 18px; line-height: 24px; font-weight: 600; color: rgba(255,255,255,1);">
-                        We highlight behavioral brand truths, and create experiences that spark feelings worth sharing.
+                        「真正的創新不是數位貨幣，而是鑄造它們的信任機器」～ 經濟學人
                     </div>
 
                     <!-- LAYER NR. 10 -->
@@ -176,7 +177,7 @@
                          data-paddingright="[30,30,30,30]" data-paddingbottom="[21,21,21,21]"
                          data-paddingleft="[30,30,30,30]"
                          style="z-index: 7; white-space: nowrap; font-size: 14px; line-height: 14px; font-weight: 600; color: #000000;background-color:rgba(253,198,87,1);border: 2px solid rgba(253,198,87,1);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
-                        BUY THEME NOW
+                        DISCOVER MORE
                     </div>
                 </li>
             </ul>
@@ -192,9 +193,8 @@
             <!-- Start Section title -->
             <div class="col-lg-6 m-auto text-center">
                 <div class="section-title-wrap">
-                    <h2>Welcome you to tri-o</h2>
-                    <p class="mb-0">Tri-O is a powerful, responsive and trendy multipurpose bootstrap template. Bring
-                        your website to a new level with Tri-O.</p>
+                    <h2>Welcome you to OPEN-ARI</h2>
+                    <p class="mb-0">ARI 藝術作品資源識別碼（Art Resource Identifier）系統實驗計畫，透過作品申請作品碼結合區塊鏈技術與第三方交易平台實驗數位交易行為</p>
                 </div>
             </div>
             <!-- End Section title -->
@@ -218,9 +218,8 @@
                                 </div>
 
                                 <div class="feature-info">
-                                    <h3>Free Plugins Included</h3>
-                                    <p>Important plugins are included and free Lorem ipsum dolor sit amet in Tri-O:
-                                        Essential Grid Slider Revolution, Has Composer.</p>
+                                    <h3>藝術家</h3>
+                                    <p>藝術家作品碼 ARI on blockchain 所提供可對接使用的API，標註作品與典藏機構，讓實體與虛擬作品的更種應用有身份的指向</p>
                                 </div>
                             </div>
                         </div>
@@ -230,13 +229,12 @@
                         <div class="col-md-6">
                             <div class="single-welcome-feature d-flex">
                                 <div class="feature-icon">
-                                    <i class="fa fa-file-o"></i>
+                                    <i class="fa fa-codepen"></i>
                                 </div>
 
                                 <div class="feature-info">
-                                    <h3>Pixel-Perfect Design</h3>
-                                    <p>With in-depth sparkling design, Tri-O decides your successes ileum dolor sit abet
-                                        in catching visitors’ eyes and satisfying them.</p>
+                                    <h3>研究評論與藏家</h3>
+                                    <p>藝術家作品碼 ARI on blockchain 所提供可對接使用的API，豐富藝術作品未來在朔源以及研究與數位化的可能性，並且讓一般引述與其他行為有個共通的指引位置，方便研究與藏家們的研究與引用，累積未來豐富資產。</p>
                                 </div>
                             </div>
                         </div>
@@ -246,19 +244,18 @@
                         <div class="col-md-6">
                             <div class="single-welcome-feature d-flex">
                                 <div class="feature-icon">
-                                    <i class="fa fa-folder-open-o"></i>
+                                    <i class="fa fa-codepen"></i>
                                 </div>
 
                                 <div class="feature-info">
-                                    <h3>Highly Customizable</h3>
-                                    <p>One of our pride – this feature will change everything Lorem ipsum dolor from now
-                                        on, it’s easy to customize your site.</p>
+                                    <h3>第三方藝術交易平台服務</h3>
+                                    <p>藝術家作品碼 ARI on blockchain 所提供可對接使用的API，將作品銷售交易資訊儲存或是其他服務的對應連結記錄</p>
                                 </div>
                             </div>
                         </div>
                         <!-- End Single Welcome Feature -->
 
-                        <!-- Start Single Welcome Feature -->
+                        <!-- Start Single Welcome Feature
                         <div class="col-md-6">
                             <div class="single-welcome-feature d-flex">
                                 <div class="feature-icon">
@@ -272,7 +269,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Welcome Feature -->
+                        End Single Welcome Feature -->
                     </div>
                 </div>
             </div>
@@ -297,8 +294,8 @@
             <!-- Single FunFact Start -->
             <div class="col-6 col-lg-3 text-center">
                 <div class="single-fun-fact-wrap bg-img" data-bg="assets/img/funfact-counter/counters_02.jpg">
-                    <p class="fun-fact-number"><span class="odometer" data-count="90"></span>%</p>
-                    <h4>Happy Customers</h4>
+                    <p class="fun-fact-number"><span class="odometer" data-count="8"></span>+</p>
+                    <h4>Artists</h4>
                 </div>
             </div>
             <!-- Single FunFact End -->
@@ -316,7 +313,7 @@
             <div class="col-6 col-lg-3 text-center">
                 <div class="single-fun-fact-wrap bg-img" data-bg="assets/img/funfact-counter/counters_04.jpg">
                     <p class="fun-fact-number"><span class="odometer" data-count="12999"></span></p>
-                    <h4>Cups Coffee</h4>
+                    <h4>Etherchain</h4>
                 </div>
             </div>
             <!-- Single FunFact End -->
@@ -332,9 +329,8 @@
             <!-- Start Section title -->
             <div class="col-lg-6 m-auto text-center">
                 <div class="section-title-wrap">
-                    <h2>Portfolios</h2>
-                    <p class="mb-0">Choose from our wide range of portfolio layouts to create your own amazing
-                        your good showcase.</p>
+                    <h2>最新申請</h2>
+                    <p class="mb-0">這個實驗專案透過在讓藝術家申請藝術作品碼ARI的過程，透過第三方服務示範應用於藝術交易，同時也對其作品名冊也保有開放性與延展性，讓未來第三方服務與單位能延續，並保有持續研究與表述的可能。</p>
                 </div>
             </div>
             <!-- End Section title -->
@@ -554,70 +550,6 @@
 </section>
 <!--== End Testimonial Area Wrapper ==-->
 
-<!--== Start Latest Blog Area Wrapper ==-->
-<section class="latest-blog-area-wrapper bg-offwhite pt-120 pt-md-80 pt-sm-60  pb-120 pb-md-80 pb-sm-60">
-    <div class="container">
-        <div class="row">
-            <!-- Start Section title -->
-            <div class="col-lg-6 m-auto text-center">
-                <div class="section-title-wrap">
-                    <h2>Blog</h2>
-                    <p class="mb-0">Meet excellent blog styles with lots of new features and beautiful easy-to-use
-                        layouts.</p>
-                </div>
-            </div>
-            <!-- End Section title -->
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="blog-content-wrap">
-                    <div class="ht-slick-slider"
-                         data-slick='{"slidesToShow": 2, "slidesToScroll": 1, "dots": true, "responsive":[{"breakpoint": 991,"settings":{"slidesToShow": 1}}]}'>
-                        <!-- Start Single Blog Post -->
-                        <div class="single-blog-post-wrap">
-                            <h2><a href="blog-details.html">Work Passionately</a></h2>
-                            <div class="post-meta">
-                                <a href="blog-details.html" class="post-date"><i class="fa fa-clock-o"></i> March 9,
-                                    2019</a>
-                            </div>
-                            <p>Happiness is the universal feeling we all aspire to experience more of, yet, we can be an
-                                angry, moody, depressed bunch, can’t</p>
-                        </div>
-                        <!-- End Single Blog Post -->
-
-                        <!-- Start Single Blog Post -->
-                        <div class="single-blog-post-wrap">
-                            <h2><a href="blog-details.html">Creating electronic beats in the Malaysian Rainforest's</a>
-                            </h2>
-                            <div class="post-meta">
-                                <a href="blog-details.html" class="post-date"><i class="fa fa-clock-o"></i> March 10,
-                                    2019</a>
-                            </div>
-                            <p>I have no age. I carry my years without submitting to the regimen of time and its
-                                chronology of dates and seasons</p>
-                        </div>
-                        <!-- End Single Blog Post -->
-
-                        <!-- Start Single Blog Post -->
-                        <div class="single-blog-post-wrap">
-                            <h2><a href="blog-details.html">Photographer’s latest project reexamines time and space</a>
-                            </h2>
-                            <div class="post-meta">
-                                <a href="blog-details.html" class="post-date"><i class="fa fa-clock-o"></i> March 10,
-                                    2019</a>
-                            </div>
-                            <p>I have no age. I carry my years without submitting to the regimen of time and its
-                                chronology of dates and seasons</p>
-                        </div>
-                        <!-- End Single Blog Post -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--== End Latest Blog Area Wrapper ==-->
 
 <!--== Start Team Area Wrapper ==-->
 <section class="team-member-area mt-120 mt-md-80 mt-sm-60">
@@ -626,9 +558,7 @@
             <!-- Start Section title -->
             <div class="col-lg-6 m-auto text-center">
                 <div class="section-title-wrap">
-                    <h2>Meet The team</h2>
-                    <p class="mb-0">We’re a creative agency who pursue brilliance. We create new companies — and fix old
-                        ones.</p>
+                    <h2>參與實踐計劃的藝術家</h2>
                 </div>
             </div>
             <!-- End Section title -->

@@ -118,7 +118,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown-navbar full-width"><a href="{{ url('/faq-accordion') }}">Q & A</a>
+                                <li class="dropdown-navbar full-width"><a href="{{ url('/faq') }}">Q & A</a>
                                 </li>
                             </ul>
                         </nav>

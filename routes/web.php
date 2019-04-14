@@ -47,7 +47,7 @@ Route::get('/3rd-open-ari', function () {return view('3rd-open-ari'); });
 Route::get('/api-open-ari', function () {return view('api-open-ari'); });
 Route::get('/ETH-open-ari', function () {return view('ETH-open-ari'); });
 
-Route::get('/faq-accordion', function () {return view('FAQ-accordion'); });
+Route::get('/faq', function () {return view('FAQ-accordion'); });
 
 Route::get('/contact', function () {return view('contact'); });
 

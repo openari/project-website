@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', '最新申請作品')
 
 @section('headerOptions', 'black-header header-padding')
 

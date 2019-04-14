@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', '作品指向')
 
 @section('headerOptions', 'black-header header-padding')
 
@@ -11,7 +12,7 @@
                 <div class="page-header-content d-flex">
                     <h5></h5>
                     <form class="form-inline my-2 my-lg-0" action="{{ action('ArtController@query') }}" method="get">
-                      <input class="form-control mr-sm-2" type="search" name="art-id" placeholder="查詢 作品" aria-label="Search">
+                      <input class="form-control mr-sm-2" type="search" name="art-id" placeholder="查詢 作品碼" aria-label="Search">
                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>

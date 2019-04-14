@@ -24,8 +24,8 @@ Route::get('/query', 'ArtController@query');
 Route::get('/browse', 'ArtController@index');
 Route::get('/arts/{artId}', 'ArtController@show');
 Route::get('/arts/{artId}/{part?}', 'ArtController@show');
-Route::get('/arts/{artId}/certification', function () {return view('arts.showcase-details-3'); });
-Route::get('/showcase-details-4', function () {return view('arts.showcase-details-4'); });
+Route::get('/arts/{artId}/pointers/create', 'PointerController@create');
+Route::post('/arts/{artId}/pointers/create', 'PointerController@store');
 
 Route::get('/register-step1-open-ari', 'ArtController@create_step1');
 Route::post('/register-step1-open-ari', 'ArtController@store_step1');
@@ -45,7 +45,6 @@ Route::post('/applications/register', 'ApplicationController@store');
 Route::get('/your-open-ari', function () {return view('your-open-ari'); });
 Route::get('/apply-feedback-open-ari', function () {return view('apply-feedback-open-ari'); });
 Route::get('/apply-modified-open-ari', function () {return view('apply-modified-open-ari'); });
-Route::get('/apply-d-open-ari', function () {return view('apply-d-open-ari'); });
 Route::get('/3rd-party-applications', function () {return view('gallery-box'); });
 Route::get('/3rd-open-ari', function () {return view('3rd-open-ari'); });
 Route::get('/api-open-ari', function () {return view('api-open-ari'); });

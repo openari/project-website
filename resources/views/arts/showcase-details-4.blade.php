@@ -26,8 +26,22 @@
     <div class="blog-details-content-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="checkout-page-coupon-area">
+                        <!-- Message Start -->
+                        @if (session('message'))
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                <strong>{{ session('message') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                        <!-- Message End -->
+                    </div>
+                </div>
 
-            <div class="col-lg-12">
+                <div class="col-lg-12">
                     <div class="single-sidebar-item-wrap">
                             <h1 class="sidebar-title">作品碼 {{ $art->id }}</h1>
                             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,7 +74,7 @@
                                         <h5>指向申請</h5>
                                         <p>外部的論述研究，評論，詮釋，引述，都能透過指向申請，將作品碼指向您的作品，近一步統整回應，轉述，詮釋等各式公開連結，都可申請並對作品碼做附加。秉持公開精神，任何單位只要是公共公開連結都能在此申請指向。</p>
                                         <div class="proceed-checkout-btn m-2 float-left">
-                                            <a href="{{ url('/apply-d-open-ari') }}" class="btn btn-black">我要申請</a>
+                                            <a href="{{ action('PointerController@create', [ 'artId' => $art->id ]) }}" class="btn btn-black">我要申請</a>
                                         </div>
                                 </div>
 

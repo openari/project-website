@@ -173,5 +173,6 @@ return [
         'title'                 => '標題',
         'username'              => '使用者名字',
         'year'                  => '年',
+        'applicant'             => '申請人/單位',
     ],
 ];

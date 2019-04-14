@@ -139,6 +139,35 @@ class APIService {
 
     }
 
+    public function add_pointer($invitationCode, $artId, $applicant, $phone, $email, $title, $pointer_url, $abstract) {
+
+        $body = [
+            'invitation_code' => $invitationCode,
+            'pointer' => [
+                'applicant' => $applicant,
+                'phone' => $phone,
+                'email' => $email,
+                'title' => $title,
+                'pointer_url' => $pointer_url,
+                'abstract' => $abstract,
+            ]
+        ];
+
+        $response = $this->client->post($this->endpoint.'/arts/'.$artId.'/pointers', [
+            'body' => json_encode($body),
+            'debug' => false,
+            'http_errors' => false,
+        ]);
+
+        Log::info('API Service /arts/'.$artId.'/pointers '.$response->getStatusCode().$response->getBody());
+
+        if ($response->getStatusCode() === 201) {
+            return 'success';
+        }
+
+        return 'failed';
+    }
+
     public function register_application($applicant, $phone, $email, $url, $source, $description) {
 
         $response = $this->request('/applications', [

@@ -93,10 +93,10 @@
                                     <ul class="dropdown-nav mega-menu-wrap">
                                         <li class="mega-menu-item"><a href="#" class="mega-title">第三方應用角色</a>
                                             <ul>
-                                                <li><a href="{{ url('/gallery-box') }}">線上藝廊</a></li>
-                                                <li><a href="{{ url('/gallery-box') }}">創作者</a></li>
-                                                <li><a href="{{ url('/gallery-box') }}">藝術拍賣</a></li>
-                                                <li><a href="{{ url('/gallery-box') }}">美術館與藝術研究機構</a></li>
+                                                <li><a href="{{ url('/3rd-party-applications') }}">線上藝廊</a></li>
+                                                <li><a href="{{ url('/3rd-party-applications') }}">創作者</a></li>
+                                                <li><a href="{{ url('/3rd-party-applications') }}">藝術拍賣</a></li>
+                                                <li><a href="{{ url('/3rd-party-applications') }}">美術館與藝術研究機構</a></li>
                                             </ul>
                                         </li>
                                         <li class="mega-menu-item"><a href="#" class="mega-title">資源與申請</a>

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="page-header-content d-flex">
-                    <h1>Gallery Box</h1>
+                    <h1>第三方應用與申請</h1>
                 </div>
             </div>
         </div>
@@ -27,13 +27,9 @@
                     <div class="col-lg-5 my-auto">
                         <!-- Start Who About Content -->
                         <div class="restaurant-about-content">
-                            <h2>Who We Are?</h2>
-                            <p>Tri-O has become well known for signature prints and we are constantly looking to find
-                                new,
-                                innovative and easy to wear prints from all over the world. We pride ourselves on
-                                delivering
-                                high quality clothing at an affordable price.</p>
-                            <a href="#" class="btn btn-black">Discover More</a>
+                            <h2>我們開源，建立應用的藝術生態圈</h2>
+                            <p>本計劃支持開源計劃，透過 GITHUB 開源，包含API/BLACKCHAIN/DASHBOARD，引用與延伸整個藝術生態圈的可能性</p>
+                            <a href="https://github.com/openari" class="btn btn-black">GITHUB</a>
                         </div>
                         <!-- End Who About Content -->
                     </div>
@@ -44,23 +40,23 @@
                             <div class="row masonry-grid mtm-30" style="position: relative; height: 589.375px;">
                                 <div class="col-sm-6 mt-30" style="position: absolute; left: 0px; top: 0px;">
                                     <figure class="gallery-image">
-                                        <img src="assets/img/home-fashion/about/01.jpg" alt="Gallery">
+                                        <a href="https://openari.docs.apiary.io/#" target="_blank"><img src="assets/img/home-fashion/about/01.jpg" alt="apiary openari"></a>
                                     </figure>
                                 </div>
                                 <div class="col-sm-6 mt-30" style="position: absolute; left: 332.5px; top: 0px;">
                                     <figure class="gallery-image">
-                                        <img src="assets/img/home-fashion/about/02.jpg" alt="Gallery">
+                                        <a href="https://github.com/openari/dashboard" target="_blank"><img src="assets/img/home-fashion/about/02.jpg" alt="github openari"></a>
                                     </figure>
                                 </div>
                                 <div class="col-sm-6 mt-30" style="position: absolute; left: 0px; top: 237.969px;">
                                     <figure class="gallery-image">
-                                        <img src="assets/img/home-fashion/about/03.jpg" alt="Gallery">
+                                        <a href="https://github.com/openari/blockchain-gateway" target="_blank"><img src="assets/img/home-fashion/about/03.jpg" alt="github blockchain-gateway"></a>
                                     </figure>
                                 </div>
-                                <div class="col-sm-6 mt-30" style="position: absolute; left: 332.5px; top: 351.406px;">
+                                <!--<div class="col-sm-6 mt-30" style="position: absolute; left: 332.5px; top: 351.406px;">
                                     <figure class="gallery-image">
                                         <img src="assets/img/home-fashion/about/04.jpg" alt="Gallery">
-                                    </figure>
+                                    </figure>-->
                                 </div>
                             </div>
                         </div>
@@ -77,10 +73,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 m-auto">
                         <div class="fashion-call-action-left">
-                            <h2 class="mb-36 mb-sm-16">An <span>Unique</span> Fashion Demo.</h2>
-                            <p>Our key aim is to provide an exciting clothing collection alongside an excellent shopping
-                                experience for all our customers.</p>
-
+                            <h2 class="mb-36 mb-sm-16">適合對象</h2>
+                            <p>作者的特質（藝術家）、學術的詮釋（藝術相關研究討論者）、公共的參與（收藏、藝術資料多元提供者）透過API串接，建立第三方應用的藝術生態圈。</p>
+                             <a href="register-open-ari.html" class="btn btn-black">我要申請</a>
                             <div class="row mt-44 mt-sm-24">
                                 <div class="col-sm-6">
                                     <figure class="call-action-img">
@@ -106,50 +101,6 @@
             </div>
         </div>
         <!-- End Gallery Box Item #02 -->
-
-        <!-- Start Gallery Box Item #03 -->
-        <div class="gallery-box-3 pt-120 pt-md-80 pt-sm-60 pb-120 pb-md-80 pb-sm-60">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 order-1 my-auto">
-                        <!-- Start Restaurant About Content -->
-                        <div class="restaurant-about-content">
-                            <h2>Discover Our Story.</h2>
-                            <p>At our restaurant the premise is simple; we seek to tell our story through the food we
-                                serve. We
-                                have retained our Michelin star since 2013. Inspired by chef Tom Sellers’ culinary
-                                career and
-                                the history of British food, certain dishes are influenced by memory or provenance of
-                                ingredients.</p>
-                            <a href="#" class="btn btn-brand">Discover Restaurant</a>
-                        </div>
-                        <!-- End Restaurant About Content -->
-                    </div>
-
-                    <div class="col-lg-7 order-0 order-lg-1">
-                        <!-- Start Restaurant About Gallery -->
-                        <div class="restaurant-about-gallery mb-sm-50 mb-md-50">
-                            <div class="row masonry-grid" style="position: relative; height: 445.938px;">
-                                <div class="col-sm-6" style="position: absolute; left: 0px; top: 0px;">
-                                    <a href="#"><img src="assets/img/home-restaurant/restaurant-01.jpg"
-                                                     alt="Restaurant"></a>
-                                </div>
-                                <div class="col-sm-6 mt-xs-30" style="position: absolute; left: 332.5px; top: 0px;">
-                                    <a href="#"><img src="assets/img/home-restaurant/restaurant-02.jpg"
-                                                     alt="Restaurant"></a>
-                                </div>
-                                <div class="col-sm-6 mt-30" style="position: absolute; left: 0px; top: 207.969px;">
-                                    <a href="#"><img src="assets/img/home-restaurant/restaurant-03.jpg"
-                                                     alt="Restaurant"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Restaurant About Gallery -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Gallery Box Item #03 -->
     </section>
 </div>
 <!--== End Page Content Wrapper ==-->

@@ -139,4 +139,24 @@ class APIService {
 
     }
 
+    public function register_application($applicant, $phone, $email, $url, $source, $description) {
+
+        $response = $this->request('/applications', [
+            'applicant' => $applicant,
+            'phone' => $phone,
+            'email' => $email,
+            'url' => $url,
+            'source' => $source,
+            'description' => $description,
+        ]);
+
+        Log::info('API Service /applications '.$response->getStatusCode().$response->getBody());
+
+        if ($response->getStatusCode() === 201) {
+            return 'success';
+        }
+
+        return 'failed';
+    }
+
 }

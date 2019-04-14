@@ -39,6 +39,8 @@ Route::post('/register-step3-open-ari', 'ArtController@store_step3');
 Route::get('/register-step4-open-ari', 'ArtController@create_step4');
 Route::post('/register-step4-open-ari', 'ArtController@store_step4');
 
+Route::get('/applications/register', 'ApplicationController@create');
+Route::post('/applications/register', 'ApplicationController@store');
 
 Route::get('/your-open-ari', function () {return view('your-open-ari'); });
 Route::get('/apply-feedback-open-ari', function () {return view('apply-feedback-open-ari'); });

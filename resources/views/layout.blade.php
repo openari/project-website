@@ -102,8 +102,8 @@
                                         <li class="mega-menu-item"><a href="#" class="mega-title">資源與申請</a>
                                             <ul>
                                                 <li><a href="{{ url('/3rd-open-ari') }}">第三方架構說明</a></li>
-                                                <li><a href="{{ url('/api-open-ari') }}">API</a></li>
-                                                <li><a href="{{ url('/register-open-ari') }}">我要申請</a></li>
+                                                <li><a href="https://openari.docs.apiary.io/" target="_blank">API</a></li>
+                                                <li><a href="{{ url('/applications/register') }}">我要申請</a></li>
                                             </ul>
                                         </li>
                                     </ul>

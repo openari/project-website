@@ -10,10 +10,10 @@
             <div class="col-12 text-center">
                 <div class="page-header-content d-flex">
                     <h5></h5>
-                    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="查詢 作品" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+                    <form class="form-inline my-2 my-lg-0" action="{{ action('ArtController@query') }}" method="get">
+                      <input class="form-control mr-sm-2" type="search" name="art-id" placeholder="查詢 作品" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -29,21 +29,21 @@
 
             <div class="col-lg-12">
                     <div class="single-sidebar-item-wrap">
-                            <h1 class="sidebar-title">作品碼 xcr3456789</h1>
+                            <h1 class="sidebar-title">作品碼 {{ $art->id }}</h1>
                             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav mr-auto">
                                       <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/showcase-details') }}">標示 <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'identification' ]) }}">標示 <span class="sr-only">(current)</span></a>
                                       </li>
                                       <li class="nav-item active">
                                         <a class="nav-link" href="#">所有權</a>
                                       </li>
                                       <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/showcase-details-3') }}">認證典藏</a>
+                                        <a class="nav-link" href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'certificate' ]) }}">認證典藏</a>
                                       </li>
                                       <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/showcase-details-4') }}">指向</a>
+                                        <a class="nav-link" href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'pointers' ]) }}">指向</a>
                                       </li>
                                     </ul>
 
@@ -61,7 +61,7 @@
                                 <div class="col-lg-3">
 
                                                 <div class="single-input-item">
-                                                        <h5>2019.03.13</h5>
+                                                        <h5>{{ \Carbon\Carbon::createFromTimestampMs($art->ownership->created_at)->format('Y.m.d') }}</h5>
                                                         <p>所有權部 V1.0</p>
                                                 </div>
 
@@ -69,23 +69,23 @@
                                 <div class="col-lg-3">
                                                 <div class="single-input-item">
                                                     <h5>物件保存人或單位</h5>
-                                                    <p>哈其昌</p>
+                                                    <p>{{ $art->ownership->owner }}</p>
                                                 </div>
                                                 <div class="single-input-item">
                                                     <h5>物件保存人或單位聯繫方式</h5>
-                                                    <p>dizzyha@atmorning.com</p>
-                                                    <p>0955767292</p>
+                                                    <p>{{ $art->ownership->email }}</p>
+                                                    <p>{{ $art->ownership->phone }}</p>
                                                 </div>
                                                 <div class="single-input-item">
                                                     <h5>交易紀錄</h5>
-                                                    <p>2000元</p>
+                                                    <p>{{ $art->ownership->price }}</p>
                                                 </div>
                                 </div>
                                 <div class="col-lg-3"></div>
                                 <div class="col-lg-3"></div>
                             </div>
                         <hr>
-                            <div class="row">
+                            <!-- <div class="row">
 
                                 <div class="col-lg-3">
 
@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="col-lg-3"></div>
                                 <div class="col-lg-3"></div>
-                            </div>
+                            </div> -->
                         <hr>
                     </div>
                 </div>

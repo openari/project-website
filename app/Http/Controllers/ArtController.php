@@ -12,6 +12,57 @@ class ArtController extends Controller
         $this->apiService = new APIService();
     }
 
+    public function index() {
+        $response = $this->apiService->list_arts();
+        $arts = $response->arts;
+        return view('arts.showcase-open-ari', [
+            'arts' => $arts,
+        ]);
+    }
+
+    public function query(Request $request) {
+        if ($request->has('art-id')) {
+            return redirect(action('ArtController@show', [
+                'artId' => $request->input('art-id')
+            ]));
+        }
+        return redirect(action('ArtController@index'));
+    }
+
+    public function show($artId, $part='identification') {
+        $art = $this->apiService->get_art($artId);
+
+        if ($art === 'not found') {
+            abort(404);
+        } else if ($art === 'error') {
+            abort(500);
+        }
+
+        if ($part == 'identification') {
+            return view('arts.showcase-details', [
+                'art' => $art,
+                'identification' => $art->identification
+            ]);
+        } else if ($part == 'ownership') {
+            return view('arts.showcase-details-2', [
+                'art' => $art,
+                'identification' => $art->identification
+            ]);
+        } else if ($part == 'certificate') {
+            return view('arts.showcase-details-3', [
+                'art' => $art,
+                'identification' => $art->identification
+            ]);
+        } else if ($part == 'pointers') {
+            return view('arts.showcase-details-4', [
+                'art' => $art,
+                'identification' => $art->identification
+            ]);
+        }
+
+        abort('404');
+    }
+
     public function create_step1() {
         $invitationCode = session('invitation_code');
 
@@ -136,4 +187,5 @@ class ArtController extends Controller
 
         return back()->withInput()->withErrors([ '作業失敗，請再試一次' ]);
     }
+
 }

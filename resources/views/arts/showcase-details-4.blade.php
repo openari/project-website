@@ -10,10 +10,10 @@
             <div class="col-12 text-center">
                 <div class="page-header-content d-flex">
                     <h5></h5>
-                    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="查詢 作品" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+                    <form class="form-inline my-2 my-lg-0" action="{{ action('ArtController@query') }}" method="get">
+                      <input class="form-control mr-sm-2" type="search" name="art-id" placeholder="查詢 作品" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -29,25 +29,26 @@
 
             <div class="col-lg-12">
                     <div class="single-sidebar-item-wrap">
-                            <h1 class="sidebar-title">作品碼 xcr3456789</h1>
+                            <h1 class="sidebar-title">作品碼 {{ $art->id }}</h1>
                             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav mr-auto">
                                       <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/showcase-details') }}">標示 <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'identification' ]) }}">標示 <span class="sr-only">(current)</span></a>
                                       </li>
                                       <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/showcase-details-2') }}">所有權</a>
+                                        <a class="nav-link" href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'ownership' ]) }}">所有權</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'certificate' ]) }}">認證典藏</a>
                                       </li>
                                       <li class="nav-item active">
-                                        <a class="nav-link" href="#">認證典藏</a>
-                                      </li>
-                                      <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/showcase-details-4') }}">指向</a>
+                                        <a class="nav-link" href="#">指向</a>
                                       </li>
                                     </ul>
+
                                   </div>
-                                 <div class="proceed-checkout-btn m-2 float-left">
+                                <div class="proceed-checkout-btn m-2 float-left">
                                             <a href="{{ url('/apply-feedback-open-ari') }}" class="btn btn-black">檢舉</a>
                                         </div>
                                         <div class="proceed-checkout-btn m-2 float-left">
@@ -56,44 +57,53 @@
                                 </div>
                             </nav>
                              <div class="single-input-item">
-                                        <h5>ARI 認證典藏部分，目前尚未公開。</h5>
-                                        <p>認證典藏-面對真偽以及藝術盜竊和學術研究等需求，方便藝術品貿易，保險業以及藝術和古董評估師，保留合作開發的空間，希望未來透過各個博物館，典藏單位，藝廊等與各方合作。</p>
+                                        <h5>指向申請</h5>
+                                        <p>外部的論述研究，評論，詮釋，引述，都能透過指向申請，將作品碼指向您的作品，近一步統整回應，轉述，詮釋等各式公開連結，都可申請並對作品碼做附加。秉持公開精神，任何單位只要是公共公開連結都能在此申請指向。</p>
+                                        <div class="proceed-checkout-btn m-2 float-left">
+                                            <a href="{{ url('/apply-d-open-ari') }}" class="btn btn-black">我要申請</a>
+                                        </div>
                                 </div>
-                                 <div class="comment-box-form mt-48">
-                            <h5>有興趣請與我們聯絡</h5>
-                            <form action="#">
-                                <div class="row row-20">
-                                    <div class="col-12">
-                                        <div class="form-input-item mb-20">
-                                            <textarea name="comments" id="comments" cols="30" rows="5"
-                                                      placeholder="Comment*" required></textarea>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-4 mb-sm-20">
-                                        <div class="form-input-item">
-                                            <input type="text" placeholder="Name*" required/>
-                                        </div>
-                                    </div>
+                            <div class="shopping-cart-table table-responsive p-2">
+                            <hr>
+                            <h5>指向清單</h5>
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                <tr>
+                                    <th>作品指向</th>
+                                    <th>時間</th>
+                                    <th colspan="2">SHA-3指紋碼</th>
 
-                                    <div class="col-md-4 mb-sm-20">
-                                        <div class="form-input-item">
-                                            <input type="email" placeholder="Email*" required/>
-                                        </div>
-                                    </div>
+                                </tr>
+                                </thead>
 
-                                    <div class="col-md-4">
-                                        <div class="form-input-item mb-20">
-                                            <input type="url" placeholder="Website"/>
+                                <tbody>
+                                <tr>
+                                    <td class="product-list">
+                                        <div class="cart-product-item d-flex align-items-center">
+                                            <a href="#" class="product-thumb">
+                                                <img src="assets/img/products/prod-01.jpg" alt="Product"/>
+                                            </a>
+                                            <a href="#" class="product-name">Metallic cotton
+                                                dress</a>
                                         </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button class="btn btn-brand w-100">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                                    </td>
+                                    <td>
+                                        <span class="price">2019.04.04</span>
+                                    </td>
+                                    <td>
+                                        <span class="price">保護中</span>
+                                    </td>
+                                    <td>
+                                        <span class="price"><a href="#">download</a></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
+                                </div>
+                        <hr>
+
                         <hr>
                     </div>
                 </div>

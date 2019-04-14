@@ -20,6 +20,13 @@ Route::get('/artists-register', 'ArtistController@create');
 Route::post('/artists-register', 'ArtistController@store');
 
 
+Route::get('/query', 'ArtController@query');
+Route::get('/browse', 'ArtController@index');
+Route::get('/arts/{artId}', 'ArtController@show');
+Route::get('/arts/{artId}/{part?}', 'ArtController@show');
+Route::get('/arts/{artId}/certification', function () {return view('arts.showcase-details-3'); });
+Route::get('/showcase-details-4', function () {return view('arts.showcase-details-4'); });
+
 Route::get('/register-step1-open-ari', 'ArtController@create_step1');
 Route::post('/register-step1-open-ari', 'ArtController@store_step1');
 
@@ -34,11 +41,6 @@ Route::post('/register-step4-open-ari', 'ArtController@store_step4');
 
 
 Route::get('/your-open-ari', function () {return view('your-open-ari'); });
-Route::get('/showcase-open-ari', function () {return view('showcase-open-ari'); });
-Route::get('/showcase-details', function () {return view('showcase-details'); });
-Route::get('/showcase-details-2', function () {return view('showcase-details-2'); });
-Route::get('/showcase-details-3', function () {return view('showcase-details-3'); });
-Route::get('/showcase-details-4', function () {return view('showcase-details-4'); });
 Route::get('/apply-feedback-open-ari', function () {return view('apply-feedback-open-ari'); });
 Route::get('/apply-modified-open-ari', function () {return view('apply-modified-open-ari'); });
 Route::get('/apply-d-open-ari', function () {return view('apply-d-open-ari'); });

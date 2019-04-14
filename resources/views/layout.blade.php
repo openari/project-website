@@ -21,14 +21,14 @@
           rel="stylesheet">
 
     <!--=== All Plugins CSS ===-->
-    <link href="assets/css/plugins.css" rel="stylesheet">
+    <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet">
     <!--=== All Vendor CSS ===-->
-    <link href="assets/css/vendor.css" rel="stylesheet">
+    <link href="{{asset('assets/css/vendor.css')}}" rel="stylesheet">
     <!--=== Main Style CSS ===-->
-    <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="{{asset('assets/css/style.min.css')}}" rel="stylesheet">
 
     <!-- Modernizer JS -->
-    <script src="assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="{{asset('assets/js/modernizr-2.8.3.min.js')}}"></script>
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -63,11 +63,11 @@
             <!-- Start Logo Area Wrap -->
             <div class="col-6 col-lg-2 col-xl-3 text-center text-lg-left">
                 <a href="{{ url('/') }}" class="logo-wrap d-block">
-                    <!-- <img src="assets/img/logo-white.png" alt="White Logo"/> -->
+                    <!-- <img src="{{asset('assets/img/logo-white.png')}}" alt="White Logo"/> -->
                     @hasSection('logo')
                         @yield('logo')
                     @else
-                        <img src="assets/img/logo-black.png" class="sticky-logo" alt="Black Logo"/>
+                        <img src="{{asset('assets/img/logo-black.png')}}" class="sticky-logo" alt="Black Logo"/>
                     @endif
                 </a>
             </div>
@@ -87,7 +87,7 @@
                                         <li><a href="{{ url('/register-step1-open-ari') }}">作品碼申請表</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown-navbar full-width"><a href="{{ url('/showcase-open-ari') }}">查詢</a>
+                                <li class="dropdown-navbar full-width"><a href="{{ url('/browse') }}">查詢</a>
                                 </li>
                                 <li class="dropdown-navbar arrow full-width"><a href="#">第三方應用與申請</a>
                                     <ul class="dropdown-nav mega-menu-wrap">
@@ -341,28 +341,28 @@
 
 <!--=======================Javascript============================-->
 <!--=== All Vendor Js ===-->
-<script src="assets/js/vendor.js"></script>
+<script src="{{asset('assets/js/vendor.js')}}"></script>
 <!--=== All Plugins Js ===-->
-<script src="assets/js/plugins.js"></script>
+<script src="{{asset('assets/js/plugins.js')}}"></script>
 <!--=== Active Js ===-->
-<script src="assets/js/active.min.js"></script>
+<script src="{{asset('assets/js/active.min.js')}}"></script>
 
 <!--=== Revolution Slider Js ===-->
-<script src="assets/js/revslider/jquery.themepunch.tools.min.js"></script>
-<script src="assets/js/revslider/jquery.themepunch.revolution.min.js"></script>
+<script src="{{asset('assets/js/revslider/jquery.themepunch.tools.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/jquery.themepunch.revolution.min.js')}}"></script>
 
 <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script src="assets/js/revslider/extensions/revolution.extension.actions.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.carousel.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.migration.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.navigation.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.parallax.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="assets/js/revslider/extensions/revolution.extension.video.min.js"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.actions.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.carousel.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.migration.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script src="{{asset('assets/js/revslider/extensions/revolution.extension.video.min.js')}}"></script>
 
 
-<script src="assets/js/revslider/revslider-active.js"></script>
+<script src="{{asset('assets/js/revslider/revslider-active.js')}}"></script>
 </body>
 </html>

@@ -103,4 +103,40 @@ class APIService {
         return 'failed';
     }
 
+    public function list_arts() {
+
+        $response = $this->client->get($this->endpoint.'/arts', [
+            'debug' => false,
+            'http_errors' => false,
+        ]);
+
+        if ($response->getStatusCode() === 200) {
+            $body = $response->getBody();
+
+            return json_decode($body);
+        }
+
+        return false;
+    }
+
+    public function get_art($artId) {
+
+        $response = $this->client->get($this->endpoint.'/arts/'.$artId, [
+            'debug' => false,
+            'http_errors' => false,
+        ]);
+
+        if ($response->getStatusCode() === 200) {
+            $body = $response->getBody();
+
+            return json_decode($body);
+        } else if ($response->getStatusCode() === 404) {
+
+            return 'not found';
+        } else {
+            return 'error';
+        }
+
+    }
+
 }

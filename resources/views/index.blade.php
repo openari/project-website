@@ -1,6 +1,8 @@
 @extends('layout')
+@section('logo')
+    <img src="assets/img/logo-white.png" alt="White Logo"/>
+@endsection
 @section('content')
-
 <!-- Start Hero Slider Area Wrapper -->
 <div class="slider-area-wrapper fix">
     <div id="rev_slider_13_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="classic-agency"

@@ -60,7 +60,11 @@
             <div class="col-6 col-lg-2 col-xl-3 text-center text-lg-left">
                 <a href="{{ url('/') }}" class="logo-wrap d-block">
                     <!-- <img src="assets/img/logo-white.png" alt="White Logo"/> -->
-                    <img src="assets/img/logo-black.png" class="sticky-logo" alt="Black Logo"/>
+                    @hasSection('logo')
+                        @yield('logo')
+                    @else
+                        <img src="assets/img/logo-black.png" class="sticky-logo" alt="Black Logo"/>
+                    @endif
                 </a>
             </div>
             <!-- End Logo Area Wrap -->

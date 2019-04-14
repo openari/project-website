@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', '關於')
 @section('headerOptions', 'transparent-header black-header header-padding')
 @section('extraFooterClass', 'about-me-bottom-area')
 

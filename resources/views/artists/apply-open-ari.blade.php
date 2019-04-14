@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', '輸入邀請碼')
 
 @section('headerOptions', 'black-header header-padding')
 

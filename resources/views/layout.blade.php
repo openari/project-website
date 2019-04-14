@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="meta description">
+    <meta name="description" content="本實驗計畫透過在讓藝術家申請藝術作品碼ARI的過程，讓作品在市場與網際網路中有對其作品的指向性，並同時保有各種詮釋的可能。">
 
+    @hasSection('title')
+    <title>@yield('title') | OPEN-ARI 藝術作品資源識別碼 (Art Resource Identifier)</title>
+    @else
     <title>OPEN-ARI 藝術作品資源識別碼 (Art Resource Identifier)</title>
+    @endif
 
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"/>

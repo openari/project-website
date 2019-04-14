@@ -210,7 +210,7 @@
 <!--== End Off Canvas Area Wrapper ==-->
 
 <!--== Start Footer Area Wrapper ==-->
-<footer class="footer-wrapper">
+<footer class="footer-wrapper @yield('extraFooterClass')">
     <!-- Start Footer Widget Area -->
     <div class="footer-widget-wrapper pt-120 pt-md-80 pt-sm-60 pb-116 pb-md-78 pb-sm-60">
         <div class="container">

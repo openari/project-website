@@ -339,6 +339,7 @@
         </div>
 
         <div class="row masonry-grid mtm-30">
+            @foreach($arts as $art)
             <!-- Start Single Portfolio -->
             <div class="col-lg-4 col-sm-6">
                 <div class="single-portfolio-wrap">
@@ -347,211 +348,26 @@
 
                         <figcaption class="portfolio-details">
                             <div class="port-info">
-                                <h3><a href="portfolio-details.html">Tri-O Typeface</a></h3>
+                                <h3><a href="{{ action('ArtController@show', [ 'artId' => $art->id ]) }}">{{ $art->identification->title }}</a></h3>
                                 <nav class="nav portfolio-cate">
-                                    <a href="portfolio-details.html">Design</a>
-                                    <a href="portfolio-details.html">Photography</a>
+                                    <a>Design</a>
+                                    <a>Photography</a>
                                 </nav>
                             </div>
 
-                            <a href="portfolio-details.html" class="btn-view-work">View Work <i
+                            <a href="{{ action('ArtController@show', [ 'artId' => $art->id ]) }}" class="btn-view-work">View <i
                                     class="fa fa-long-arrow-right"></i></a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
             <!-- End Single Portfolio -->
+            @endforeach
 
-            <!-- Start Single Portfolio -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-portfolio-wrap">
-                    <figure class="portfolio-thumb">
-                        <img src="assets/img/portfolio/home1-port-img-2.jpg" alt="Portfolio Image"/>
-
-                        <figcaption class="portfolio-details">
-                            <div class="port-info">
-                                <h3><a href="portfolio-details.html">Featured Chairs</a></h3>
-                                <nav class="nav portfolio-cate">
-                                    <a href="portfolio-details.html">Design</a>
-                                    <a href="portfolio-details.html">Photography</a>
-                                </nav>
-                            </div>
-
-                            <a href="portfolio-details.html" class="btn-view-work">View Work <i
-                                    class="fa fa-long-arrow-right"></i></a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <!-- End Single Portfolio -->
-
-            <!-- Start Single Portfolio -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-portfolio-wrap">
-                    <figure class="portfolio-thumb">
-                        <img src="assets/img/portfolio/home1-port-img-3.jpg" alt="Portfolio Image"/>
-
-                        <figcaption class="portfolio-details">
-                            <div class="port-info">
-                                <h3><a href="portfolio-details.html">Creative Style</a></h3>
-                                <nav class="nav portfolio-cate">
-                                    <a href="portfolio-details.html">Design</a>
-                                    <a href="portfolio-details.html">Photography</a>
-                                </nav>
-                            </div>
-
-                            <a href="portfolio-details.html" class="btn-view-work">View Work <i
-                                    class="fa fa-long-arrow-right"></i></a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <!-- End Single Portfolio -->
-
-            <!-- Start Single Portfolio -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-portfolio-wrap">
-                    <figure class="portfolio-thumb">
-                        <img src="assets/img/portfolio/home1-port-img-5.jpg" alt="Portfolio Image"/>
-
-                        <figcaption class="portfolio-details">
-                            <div class="port-info">
-                                <h3><a href="portfolio-details.html">Another Card</a></h3>
-                                <nav class="nav portfolio-cate">
-                                    <a href="portfolio-details.html">Design</a>
-                                    <a href="portfolio-details.html">Photography</a>
-                                </nav>
-                            </div>
-
-                            <a href="portfolio-details.html" class="btn-view-work">View Work <i
-                                    class="fa fa-long-arrow-right"></i></a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <!-- End Single Portfolio -->
-
-            <!-- Start Single Portfolio -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-portfolio-wrap">
-                    <figure class="portfolio-thumb">
-                        <img src="assets/img/portfolio/home1-port-img-4.jpg" alt="Portfolio Image"/>
-
-                        <figcaption class="portfolio-details">
-                            <div class="port-info">
-                                <h3><a href="portfolio-details.html">Creative Style</a></h3>
-                                <nav class="nav portfolio-cate">
-                                    <a href="portfolio-details.html">Design</a>
-                                    <a href="portfolio-details.html">Photography</a>
-                                </nav>
-                            </div>
-
-                            <a href="portfolio-details.html" class="btn-view-work">View Work <i
-                                    class="fa fa-long-arrow-right"></i></a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <!-- End Single Portfolio -->
-
-            <!-- Start Single Portfolio -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-portfolio-wrap">
-                    <figure class="portfolio-thumb">
-                        <img src="assets/img/portfolio/home1-port-img-6.jpg" alt="Portfolio Image"/>
-
-                        <figcaption class="portfolio-details">
-                            <div class="port-info">
-                                <h3><a href="portfolio-details.html">Featured Chairs</a></h3>
-                                <nav class="nav portfolio-cate">
-                                    <a href="portfolio-details.html">Design</a>
-                                    <a href="portfolio-details.html">Photography</a>
-                                </nav>
-                            </div>
-
-                            <a href="portfolio-details.html" class="btn-view-work">View Work <i
-                                    class="fa fa-long-arrow-right"></i></a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <!-- End Single Portfolio -->
         </div>
     </div>
 </section>
 <!--== End Portfolio Area Wrapper ==-->
-
-<!--== Start Testimonial Area Wrapper ==-->
-<section class="testimonial-area bg-img mt-120 mt-md-80 mt-sm-60"
-         data-bg="assets/img/testimonial/home2-testi-bg.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 m-auto">
-                <div class="testimonial-content-wrap">
-                    <div class="ht-slick-slider-wrapper">
-                        <div class="ht-slick-slider"
-                             data-slick='{"slidesToShow": 1, "arrows": true, "prevArrow": ".prev-arrow", "nextArrow": ".next-arrow"}'>
-                            <!-- Single Testimonial Start -->
-                            <div class="single-testimonial-wrap layout--2">
-                                <figure class="author-thumb">
-                                    <img src="assets/img/testimonial/testimonial-1.jpg" alt="Testimonial"/>
-                                </figure>
-                                <p><sup class="quote-icon">“</sup>This is absolutely the best theme I have ever used.
-                                    The
-                                    design quality is exquisite.
-                                    Their response time is unheard of.</p>
-                                <h3 class="client-name">Jessica Jung <span
-                                        class="client-designation">Graphic Design</span>
-                                </h3>
-                            </div>
-                            <!-- Single Testimonial End -->
-
-                            <!-- Single Testimonial Start -->
-                            <div class="single-testimonial-wrap layout--2">
-                                <figure class="author-thumb">
-                                    <img src="assets/img/testimonial/testimonial-2.jpg" alt="Testimonial"/>
-                                </figure>
-                                <p><sup class="quote-icon">“</sup>This is absolutely the best theme I have ever used.
-                                    The
-                                    design quality is exquisite.
-                                    Their
-                                    response time is unheard of.”</p>
-                                <h3 class="client-name">Ken Wheeler <span
-                                        class="client-designation">JavaScript Dev</span>
-                                </h3>
-                            </div>
-                            <!-- Single Testimonial End -->
-
-                            <!-- Single Testimonial Start -->
-                            <div class="single-testimonial-wrap layout--2">
-                                <figure class="author-thumb">
-                                    <img src="assets/img/testimonial/testimonial-3.jpg" alt="Testimonial"/>
-                                </figure>
-                                <p><sup class="quote-icon">“</sup>This is absolutely the best theme I have ever used.
-                                    The
-                                    design quality is exquisite.
-                                    Their
-                                    response time is unheard of.”</p>
-                                <h3 class="client-name">Sokina Begum <span class="client-designation">Front End</span>
-                                </h3>
-                            </div>
-                            <!-- Single Testimonial End -->
-                        </div>
-
-                        <!-- Start Testimonial Slick Slider Nav -->
-                        <div class="ht-slick-nav">
-                            <button class="prev-arrow"><i class="tri-o-prev-arrow"></i></button>
-                            <button class="next-arrow"><i class="tri-o-next-arrow"></i></button>
-                        </div>
-                        <!-- End Testimonial Slick Slider Nav -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--== End Testimonial Area Wrapper ==-->
-
 
 <!--== Start Team Area Wrapper ==-->
 <section class="team-member-area mt-120 mt-md-80 mt-sm-60">
@@ -572,8 +388,8 @@
             <figure class="team-member-pic">
                 <img src="assets/img/team/team-mem-01.jpg" alt="Team Member"/>
                 <figcaption class="member-info text-center">
-                    <h3 class="team-member-name">Autumn Quins</h3>
-                    <h5 class="team-member-desi">Marketer</h5>
+                    <h3 class="team-member-name">王鼎曄</h3>
+                    <h5 class="team-member-desi">Artist</h5>
                 </figcaption>
             </figure>
         </div>
@@ -584,8 +400,8 @@
             <figure class="team-member-pic">
                 <img src="assets/img/team/team-mem-02.jpg" alt="Team Member"/>
                 <figcaption class="member-info text-center">
-                    <h3 class="team-member-name">Autumn Quins</h3>
-                    <h5 class="team-member-desi">Marketer</h5>
+                    <h3 class="team-member-name">王璽安</h3>
+                    <h5 class="team-member-desi">Artist</h5>
                 </figcaption>
             </figure>
         </div>
@@ -596,8 +412,8 @@
             <figure class="team-member-pic">
                 <img src="assets/img/team/team-mem-03.jpg" alt="Team Member"/>
                 <figcaption class="member-info text-center">
-                    <h3 class="team-member-name">Autumn Quins</h3>
-                    <h5 class="team-member-desi">Marketer</h5>
+                    <h3 class="team-member-name">林冠名</h3>
+                    <h5 class="team-member-desi">Artist</h5>
                 </figcaption>
             </figure>
         </div>
@@ -608,8 +424,8 @@
             <figure class="team-member-pic">
                 <img src="assets/img/team/team-mem-04.jpg" alt="Team Member"/>
                 <figcaption class="member-info text-center">
-                    <h3 class="team-member-name">Autumn Quins</h3>
-                    <h5 class="team-member-desi">Marketer</h5>
+                    <h3 class="team-member-name">洪皓珉</h3>
+                    <h5 class="team-member-desi">Artist</h5>
                 </figcaption>
             </figure>
         </div>
@@ -620,8 +436,41 @@
             <figure class="team-member-pic">
                 <img src="assets/img/team/team-mem-05.jpg" alt="Team Member"/>
                 <figcaption class="member-info text-center">
-                    <h3 class="team-member-name">Autumn Quins</h3>
-                    <h5 class="team-member-desi">Marketer</h5>
+                    <h3 class="team-member-name">徐郁婷</h3>
+                    <h5 class="team-member-desi">Artist</h5>
+                </figcaption>
+            </figure>
+        </div>
+        <!-- End Single Team Member -->
+        <!-- Start Single Team Member -->
+        <div class="single-team-member-wrap">
+            <figure class="team-member-pic">
+                <img src="assets/img/team/team-mem-06.jpg" alt="Team Member"/>
+                <figcaption class="member-info text-center">
+                    <h3 class="team-member-name">郭奕臣</h3>
+                    <h5 class="team-member-desi">Artist</h5>
+                </figcaption>
+            </figure>
+        </div>
+        <!-- End Single Team Member -->
+        <!-- Start Single Team Member -->
+        <div class="single-team-member-wrap">
+            <figure class="team-member-pic">
+                <img src="assets/img/team/team-mem-07.jpg" alt="Team Member"/>
+                <figcaption class="member-info text-center">
+                    <h3 class="team-member-name">錢畇竹</h3>
+                    <h5 class="team-member-desi">Artist</h5>
+                </figcaption>
+            </figure>
+        </div>
+        <!-- End Single Team Member -->
+        <!-- Start Single Team Member -->
+        <div class="single-team-member-wrap">
+            <figure class="team-member-pic">
+                <img src="assets/img/team/team-mem-08.jpg" alt="Team Member"/>
+                <figcaption class="member-info text-center">
+                    <h3 class="team-member-name">謝牧岐</h3>
+                    <h5 class="team-member-desi">Artist</h5>
                 </figcaption>
             </figure>
         </div>
@@ -637,36 +486,31 @@
             <div class="col">
                 <div class="brand-logo-content">
                     <div class="ht-slick-slider"
-                         data-slick='{"slidesToShow": 4, "arrows": false, "responsive": [{"breakpoint": 481,"settings":{"slidesToShow": 2}},{"breakpoint": 769,"settings":{"slidesToShow": 3}}]}'>
+                         data-slick='{"slidesToShow": 5, "arrows": false, "responsive": [{"breakpoint": 481,"settings":{"slidesToShow": 2}},{"breakpoint": 769,"settings":{"slidesToShow": 3}}]}'>
                         <!-- Start Single Brand Logo -->
                         <figure class="single-brand-logo">
-                            <img src="assets/img/brand-logo/brand-logo-01.png" alt="Brand Logo"/>
+                            <img src="assets/img/brand-logo/c-lab-b.png" alt="Brand Logo"/>
                         </figure>
                         <!-- End Single Brand Logo -->
 
                         <!-- Start Single Brand Logo -->
                         <figure class="single-brand-logo">
-                            <img src="assets/img/brand-logo/brand-logo-02.png" alt="Brand Logo"/>
+                            <img src="assets/img/brand-logo/GitHub-Logo.png" alt="Brand Logo"/>
                         </figure>
                         <!-- End Single Brand Logo -->
 
                         <!-- Start Single Brand Logo -->
                         <figure class="single-brand-logo">
-                            <img src="assets/img/brand-logo/brand-logo-03.png" alt="Brand Logo"/>
+                            <img src="assets/img/brand-logo/artsozaiiLogo.png" alt="Brand Logo"/>
                         </figure>
                         <!-- End Single Brand Logo -->
 
-                        <!-- Start Single Brand Logo -->
                         <figure class="single-brand-logo">
-                            <img src="assets/img/brand-logo/brand-logo-04.png" alt="Brand Logo"/>
+                            <img src="assets/img/brand-logo/AM.png" alt="Brand Logo"/>
                         </figure>
-                        <!-- End Single Brand Logo -->
-
-                        <!-- Start Single Brand Logo -->
                         <figure class="single-brand-logo">
-                            <img src="assets/img/brand-logo/brand-logo-03.png" alt="Brand Logo"/>
+                            <img src="assets/img/brand-logo/ICOM.png" alt="Brand Logo"/>
                         </figure>
-                        <!-- End Single Brand Logo -->
                     </div>
                 </div>
             </div>

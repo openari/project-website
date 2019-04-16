@@ -75,7 +75,7 @@
                         <div class="fashion-call-action-left">
                             <h2 class="mb-36 mb-sm-16">適合對象</h2>
                             <p>作者的特質（藝術家）、學術的詮釋（藝術相關研究討論者）、公共的參與（收藏、藝術資料多元提供者）透過API串接，建立第三方應用的藝術生態圈。</p>
-                             <a href="register-open-ari.html" class="btn btn-black">我要申請</a>
+                             <a href="{{ url('/applications/register') }}" class="btn btn-black">我要申請</a>
                             <div class="row mt-44 mt-sm-24">
                                 <div class="col-sm-6">
                                     <figure class="call-action-img">

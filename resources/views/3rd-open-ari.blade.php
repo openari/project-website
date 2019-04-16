@@ -97,7 +97,7 @@
 
                         <div class="feature-info">
                             <h3>此實驗計畫 白皮書</h3>
-                            <p>「旋轉星形密碼—當代藝術鏈結交流區塊的價值回溯實驗」</p>
+                            <p>「當代藝術數位加密交易所實驗」ARI 平台建置計畫</p>
                         </div>
                     </div>
                     <div class="feature-info">

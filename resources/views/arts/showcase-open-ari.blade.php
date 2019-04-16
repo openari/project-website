@@ -1,6 +1,5 @@
 @extends('layout')
 @section('title', '作品列表')
-
 @section('headerOptions', 'black-header header-padding')
 
 @section('content')

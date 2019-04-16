@@ -1,6 +1,9 @@
 @extends('layout')
 @section('title', '說明與資源')
 @section('headerOptions', 'transparent-header')
+@section('logo')
+    <img src="assets/img/logo-white.png" alt="White Logo"/>
+@endsection
 
 @section('content')
 <!--== Start Page Content Wrapper ==-->

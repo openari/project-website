@@ -66,9 +66,8 @@
                     <!-- <img src="{{asset('assets/img/logo-white.png')}}" alt="White Logo"/> -->
                     @hasSection('logo')
                         @yield('logo')
-                    @else
-                        <img src="{{asset('assets/img/logo-black.png')}}" class="sticky-logo" alt="Black Logo"/>
                     @endif
+                    <img src="{{asset('assets/img/logo-black.png')}}" class="sticky-logo" alt="Black Logo"/>
                 </a>
             </div>
             <!-- End Logo Area Wrap -->

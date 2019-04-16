@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', '第三方應用與申請')
 @section('headerOptions', 'black-header header-padding')
 
 @section('content')

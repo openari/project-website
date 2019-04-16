@@ -1,4 +1,6 @@
 @extends('layout')
+@section('title', '說明與資源')
+@section('headerOptions', 'transparent-header')
 
 @section('content')
 <!--== Start Page Content Wrapper ==-->
@@ -9,9 +11,7 @@
             <div class="row align-items-center h-100">
                 <div class="col-lg-11 text-center m-auto">
                     <div class="about-us-content white mt-sm-70 mt-md-70">
-                        <h2>The Best Solution For Your Business</h2>
-                        <p class="paragraph-width">Map where your photos were taken and discover local points of
-                            interest. There’s also a flip-out</p>
+                        <h2>OPEN-ARI</h2>
                     </div>
                 </div>
             </div>
@@ -27,21 +27,15 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="service-item-wrap">
                         <figure class="service-thumb">
-                            <img src="assets/img/services/service-1.jpg" alt="Service"/>
+                            <a herf="https://icom.museum/en/" target="_blank"><img src="assets/img/services/service-1.jpg" alt="Service"/></a>
                         </figure>
 
                         <div class="single-desc-item-wrap mt-24">
-                            <h3 class="mb-20">Marketing + Strategy</h3>
-                            <p>Organic seitan post-ironic, four loko bicycle rights art party tousled. Mlkshk tote bag
-                                stumptown.</p>
+                            <h3 class="mb-20">ObjectID</h3>
+                            <p>本實驗計劃 藝術品物件的描述規格 </p>
 
                             <ul class="showcase-desc-list">
-                                <li>Communications audit</li>
-                                <li>Competitive analysis</li>
-                                <li>In-depth interviews</li>
-                                <li>Charts of trending</li>
-                                <li>Discover new favorites</li>
-                                <li>Revisit your old favorites</li>
+                                <li>藝術作品的URI 作品名冊的規格</li>
                             </ul>
                         </div>
                     </div>
@@ -56,17 +50,11 @@
                         </figure>
 
                         <div class="single-desc-item-wrap mt-24">
-                            <h3 class="mb-20">Web Development</h3>
-                            <p>Organic seitan post-ironic, four loko bicycle rights art party tousled. Mlkshk tote bag
-                                stumptown.</p>
+                            <h3 class="mb-20">Ethereum 乙太坊</h3>
+                            <p>本實驗計畫，作品名冊上鏈於乙太坊</p>
 
                             <ul class="showcase-desc-list">
-                                <li>Competitive analysis</li>
-                                <li>In-depth interviews</li>
-                                <li>Communications audit</li>
-                                <li>Charts of trending</li>
-                                <li>Discover new favorites</li>
-                                <li>Revisit your old favorites</li>
+                                <li>去中心化區塊鏈技術存放作品名冊</li>
                             </ul>
                         </div>
                     </div>
@@ -81,17 +69,11 @@
                         </figure>
 
                         <div class="single-desc-item-wrap mt-24">
-                            <h3 class="mb-20">E-commerce Solutions</h3>
-                            <p>Organic seitan post-ironic, four loko bicycle rights art party tousled. Mlkshk tote bag
-                                stumptown.</p>
+                            <h3 class="mb-20">Google Cloud Plateform</h3>
+                            <p>本實驗計畫，系統與資料大數據於GCP上支持</p>
 
                             <ul class="showcase-desc-list">
-                                <li>Competitive analysis</li>
-                                <li>In-depth interviews</li>
-                                <li>Communications audit</li>
-                                <li>Charts of trending</li>
-                                <li>Discover new favorites</li>
-                                <li>Revisit your old favorites</li>
+                                <li>藝術作品碼申請與查詢平台</li>
                             </ul>
                         </div>
                     </div>
@@ -107,97 +89,30 @@
         <div class="container">
             <div class="row">
                 <!-- Start Single Services Feature -->
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-6 col-sm-6">
                     <div class="single-welcome-feature d-flex">
-                        <div class="feature-icon">
-                            <i class="fa fa-codepen"></i>
-                        </div>
 
                         <div class="feature-info">
-                            <h3>Free Plugins Included</h3>
-                            <p>Important plugins are included and free Lorem ipsum dolor sit amet in Tri-O:
-                                Essential Grid Slider Revolution, Has Composer.</p>
+                            <h3>此實驗計畫 白皮書</h3>
+                            <p>「旋轉星形密碼—當代藝術鏈結交流區塊的價值回溯實驗」</p>
                         </div>
+                    </div>
+                    <div class="feature-info">
+                    <a class="btn btn-bordered m-2 w-100" href="download/OPEN-ARI-LAB.pdf" target="_blank"><i class="fa fa-codepen"></i>下載</a>
                     </div>
                 </div>
                 <!-- End Single Services Feature -->
 
                 <!-- Start Single Services Feature -->
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-6 col-sm-6">
                     <div class="single-welcome-feature d-flex">
-                        <div class="feature-icon">
-                            <i class="fa fa-bicycle"></i>
-                        </div>
-
                         <div class="feature-info">
-                            <h3>Pixel-Perfect Design</h3>
-                            <p>With in-depth sparkling design, Tri-O decides your successes ileum dolor sit abet
-                                in catching visitors’ eyes and satisfying them.</p>
+                            <h3>此實驗計畫 區塊鏈應用白皮書</h3>
+                            <p>如何運用藝術品資訊，透過區塊鏈驗證真偽</p>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Services Feature -->
-
-                <!-- Start Single Services Feature -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-welcome-feature d-flex">
-                        <div class="feature-icon">
-                            <i class="fa fa-folder-open-o"></i>
-                        </div>
-
-                        <div class="feature-info">
-                            <h3>Highly Customizable</h3>
-                            <p>One of our pride – this feature will change everything Lorem ipsum dolor from now
-                                on, it’s easy to customize your site.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Services Feature -->
-
-                <!-- Start Single Services Feature -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-welcome-feature d-flex">
-                        <div class="feature-icon">
-                            <i class="fa fa-diamond"></i>
-                        </div>
-
-                        <div class="feature-info">
-                            <h3>Loads Of Layouts</h3>
-                            <p>Lots of incredible layouts were designed for your creativity ilium dolor sit amen
-                                Feel free to choose your favorite one.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Services Feature -->
-
-                <!-- Start Single Services Feature -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-welcome-feature d-flex">
-                        <div class="feature-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                        </div>
-
-                        <div class="feature-info">
-                            <h3>Extensive Documentation</h3>
-                            <p>Documentation is easy-to-read and thorough. We have invest time in it to make
-                                your establish process easy.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Services Feature -->
-
-                <!-- Start Single Services Feature -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-welcome-feature d-flex">
-                        <div class="feature-icon">
-                            <i class="fa fa-laptop"></i>
-                        </div>
-
-                        <div class="feature-info">
-                            <h3>Creative elements</h3>
-                            <p>We have included prebuilt elements to suit any of your purposes. Start building
-                                your dream website with these!</p>
-                        </div>
+                    <div class="feature-info">
+                    <a class="btn btn-bordered m-2 w-100" href="download/OPEN-ARI-LAB-BLACKCHAIN-white-paper.pdf" target="_blank"><i class="fa fa-codepen"></i>下載</a>
                     </div>
                 </div>
                 <!-- End Single Services Feature -->

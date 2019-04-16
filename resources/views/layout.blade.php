@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="本實驗計畫透過在讓藝術家申請藝術作品碼ARI的過程，讓作品在市場與網際網路中有對其作品的指向性，並同時保有各種詮釋的可能。">
+    <meta name="description" content="ARI 藝術作品資源識別碼（Art Resource Identifier）系統實驗計畫，透過作品申請作品碼結合區塊鏈技術與第三方交易平台實驗數位交易行為">
 
     @hasSection('title')
     <title>@yield('title') | OPEN-ARI 藝術作品資源識別碼 (Art Resource Identifier)</title>
@@ -81,7 +81,7 @@
                             <ul class="main-menu nav justify-content-end">
                                 <li class="dropdown-navbar"><a href="{{ url('/about') }}">關於</a>
                                 </li>
-                                <li class="dropdown-navbar arrow"><a href="#">作品碼申請</a>
+                                <li class="dropdown-navbar arrow"><a href="#">加入</a>
                                     <ul class="dropdown-nav">
                                         <li><a href="{{ url('/artists-apply') }}">輸入邀請碼</a></li>
                                         <li><a href="{{ url('/register-step1-open-ari') }}">作品碼申請表</a></li>
@@ -89,34 +89,9 @@
                                 </li>
                                 <li class="dropdown-navbar full-width"><a href="{{ url('/browse') }}">查詢</a>
                                 </li>
-                                <li class="dropdown-navbar arrow full-width"><a href="#">第三方應用與申請</a>
-                                    <ul class="dropdown-nav mega-menu-wrap">
-                                        <li class="mega-menu-item"><a href="#" class="mega-title">第三方應用角色</a>
-                                            <ul>
-                                                <li><a href="{{ url('/3rd-party-applications') }}">線上藝廊</a></li>
-                                                <li><a href="{{ url('/3rd-party-applications') }}">創作者</a></li>
-                                                <li><a href="{{ url('/3rd-party-applications') }}">藝術拍賣</a></li>
-                                                <li><a href="{{ url('/3rd-party-applications') }}">美術館與藝術研究機構</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mega-menu-item"><a href="#" class="mega-title">資源與申請</a>
-                                            <ul>
-                                                <li><a href="{{ url('/3rd-open-ari') }}">第三方架構說明</a></li>
-                                                <li><a href="https://openari.docs.apiary.io/" target="_blank">API</a></li>
-                                                <li><a href="{{ url('/applications/register') }}">我要申請</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="dropdown-navbar full-width"><a href="/3rd-party-applications">第三方應用與申請</a></li>
                                 </li>
-                                <li class="dropdown-navbar arrow full-width bg-menu"><a href="#">實驗計畫與說明</a>
-                                    <ul class="dropdown-nav mega-menu-wrap">
-                                        <li class="mega-menu-item"><a href="#" class="mega-title d-none">區塊鍊應用與開源</a>
-                                            <ul>
-                                                <li><a href="{{ url('/ETH-open-ari') }}">以太坊 (Ethereum)實驗架構說明</a></li>
-                                                <li><a href="https://github.com/openari" target="_blank">開源計畫</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="dropdown-navbar full-width bg-menu"><a href="/resources">說明與資源</a>
                                 </li>
                                 <li class="dropdown-navbar full-width"><a href="{{ url('/faq') }}">Q & A</a>
                                 </li>

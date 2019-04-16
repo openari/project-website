@@ -46,7 +46,8 @@ Route::get('/your-open-ari', function () {return view('your-open-ari'); });
 Route::get('/apply-feedback-open-ari', function () {return view('apply-feedback-open-ari'); });
 Route::get('/apply-modified-open-ari', function () {return view('apply-modified-open-ari'); });
 Route::get('/3rd-party-applications', function () {return view('gallery-box'); });
-Route::get('/3rd-open-ari', function () {return view('3rd-open-ari'); });
+Route::get('/resources', function () {return view('3rd-open-ari'); });
+
 Route::get('/api-open-ari', function () {return view('api-open-ari'); });
 Route::get('/ETH-open-ari', function () {return view('ETH-open-ari'); });
 

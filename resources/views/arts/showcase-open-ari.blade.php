@@ -46,9 +46,12 @@
                             <div class="col-sm-6 col-lg-4 photo design markup">
                                 <div class="single-portfolio-wrap layout--2">
                                     <figure class="portfolio-thumb">
-                                        <img src="assets/img/portfolio/portfolio_02.jpg" alt="Art Image"/>
-                                        <a href="{{ action('ArtController@show', [ 'artId' => $art->id ]) }}" class="btn-view-work"><i
-                                                class="fa fa-link"></i></a>
+                                        @if (empty($art->identification->image))
+                                        <img src="assets/img/portfolio/portfolio_02.jpg" alt="{{ $art->identification->title }}"/>
+                                        @else
+                                        <img src="{{ $art->identification->image }}" alt="{{ $art->identification->title }}"/>
+                                        @endif
+                                        <a href="{{ action('ArtController@show', [ 'artId' => $art->id ]) }}" class="btn-view-work"><i class="fa fa-link"></i></a>
                                     </figure>
 
                                     <div class="portfolio-details">

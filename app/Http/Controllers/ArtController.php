@@ -139,6 +139,7 @@ class ArtController extends Controller
     }
 
     public function create_step4() {
+        // dd(session('newart.identification.attachments'));
         return view('arts.register-step4-open-ari');
     }
 
@@ -148,6 +149,10 @@ class ArtController extends Controller
             'g-recaptcha-response' => 'required|captcha',
         ], [
         ]);
+
+        if (session('newart.identification.image') == null) {
+            return back()->withInput()->withErrors([ '請您上傳圖片' ]);
+        }
 
         $identification = [
             'applicant' => session('artist')->name,
@@ -164,13 +169,24 @@ class ArtController extends Controller
             'date_or_period' => session('newart.identification.date_or_period'),
             'maker' => session('newart.identification.maker'),
             'brief' => session('newart.identification.brief'),
+            'attachments' => session('newart.identification.attachments'),
+            'image' => session('newart.identification.image'),
         ];
+        $owner_public = session('newart.ownership.owner_public') ? true: false;
+        $contact_public = session('newart.ownership.contact_public') ? true: false;
+        $price_public = session('newart.ownership.price_public') ? true: false;
         $ownership = [
             'owner' => session('newart.ownership.owner'),
+            'owner_public' => $owner_public,
             'email' => session('newart.ownership.email'),
             'phone' => session('newart.ownership.phone'),
+            'contact_public' => $contact_public,
             'price' => session('newart.ownership.price'),
+            'price_public' => $price_public,
         ];
+
+        // dd($identification,
+        //     $ownership);
 
         $ret = $this->apiService->register_art(
             session('invitation_code'),
@@ -185,6 +201,49 @@ class ArtController extends Controller
                   ->with('message', '申請已送出。我們審核後將儘速以 Email 通知您，謝謝您的參與！');
         }
 
+        return back()->withInput()->withErrors([ '作業失敗，請再試一次' ]);
+    }
+
+    public function uploadImage(Request $request) {
+        if ($request->hasFile('art_image')) {
+            $filePath = $request->file('art_image')->getRealPath();
+            $url = $this->apiService->upload_image($filePath);
+
+            if ($url !== false) {
+                session([ 'newart.identification.image' => $url ]);
+                return back();
+            }
+        }
+        return back()->withInput()->withErrors([ '作業失敗，請再試一次' ]);
+    }
+
+    public function uploadAttachment(Request $request) {
+        if ($request->hasFile('art_attachment')) {
+            $filePath = $request->file('art_attachment')->getRealPath();
+            $ret = $this->apiService->upload_attachment($filePath);
+
+            if ($ret !== false) {
+                $attachments = session('newart.identification.attachments', []);
+                $attachments[] = $ret;
+                session([ 'newart.identification.attachments' => $attachments ]);
+                return back();
+            }
+        }
+        return back()->withInput()->withErrors([ '作業失敗，請再試一次' ]);
+    }
+
+    public function deleteAttachment(Request $request) {
+        if ($request->has('hash')) {
+            $attachments = session('newart.identification.attachments', []);
+            $newAttachments = [];
+            foreach($attachments as $attachment) {
+                if ($attachment->hash !== $request->hash) {
+                    $newAttachments[] = $attachment;
+                }
+            }
+            session([ 'newart.identification.attachments' => $newAttachments ]);
+            return back();
+        }
         return back()->withInput()->withErrors([ '作業失敗，請再試一次' ]);
     }
 

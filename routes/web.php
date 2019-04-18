@@ -39,6 +39,10 @@ Route::post('/register-step3-open-ari', 'ArtController@store_step3');
 Route::get('/register-step4-open-ari', 'ArtController@create_step4');
 Route::post('/register-step4-open-ari', 'ArtController@store_step4');
 
+Route::post('/upload-art-image', 'ArtController@uploadImage');
+Route::post('/upload-art-attachment', 'ArtController@uploadAttachment');
+Route::delete('/upload-art-attachment', 'ArtController@deleteAttachment');
+
 Route::get('/applications/register', 'ApplicationController@create');
 Route::post('/applications/register', 'ApplicationController@store');
 

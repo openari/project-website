@@ -112,7 +112,11 @@
                                  <h5>描述檔案</h5>
                                 <p>依照 Object ID 協定拍照對於確認物品極其重要，除了全貌以外，還應對銘文，標誌以及破損或修補部位進行特別拍照。如果可能，還應在圖像中附上與原物的比例與實物。</p>
                                     <figure class="blog-post-thumb">
-                                        <img src="{{asset('assets/img/home-blog/hb-obj-06.jpg')}}" alt="Blog Details"/>
+                                        @if (empty($identification->image))
+                                        <img src="{{asset('assets/img/home-blog/hb-obj-06.jpg')}}" alt="{{ $art->identification->title }}"/>
+                                        @else
+                                        <img src="{{ $identification->image }}" alt="{{ $art->identification->title }}"/>
+                                        @endif
                                     </figure>
 
                             <div class="blog-post-head">

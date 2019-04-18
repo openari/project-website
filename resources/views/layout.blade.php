@@ -30,6 +30,8 @@
     <!-- Modernizer JS -->
     <script src="{{asset('assets/js/modernizr-2.8.3.min.js')}}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -311,8 +313,6 @@
 
 @stack('modals')
 
-@stack('scripts')
-
 <!--=======================Javascript============================-->
 <!--=== All Vendor Js ===-->
 <script src="{{asset('assets/js/vendor.js')}}"></script>
@@ -338,5 +338,9 @@
 
 
 <script src="{{asset('assets/js/revslider/revslider-active.js')}}"></script>
+
+
+@stack('scripts')
+
 </body>
 </html>

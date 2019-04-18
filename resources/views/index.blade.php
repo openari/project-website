@@ -344,7 +344,11 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="single-portfolio-wrap">
                     <figure class="portfolio-thumb">
-                        <img src="assets/img/portfolio/home1-port-img-1.jpg" alt="Portfolio Image"/>
+                        @if (empty($art->identification->image))
+                        <img src="assets/img/portfolio/home1-port-img-1.jpg" alt="{{ $art->identification->title }}"/>
+                        @else
+                        <img src="{{ $art->identification->image }}" alt="{{ $art->identification->title }}"/>
+                        @endif
 
                         <figcaption class="portfolio-details">
                             <div class="port-info">

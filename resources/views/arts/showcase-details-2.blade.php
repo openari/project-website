@@ -70,16 +70,28 @@
                                 <div class="col-lg-3">
                                                 <div class="single-input-item">
                                                     <h5>物件保存人或單位</h5>
+                                                    @if (isset($art->ownership->owner_public) && $art->ownership->owner_public)
                                                     <p>{{ $art->ownership->owner }}</p>
+                                                    @else
+                                                    <p>不公開</p>
+                                                    @endif
                                                 </div>
                                                 <div class="single-input-item">
                                                     <h5>物件保存人或單位聯繫方式</h5>
+                                                    @if (isset($art->ownership->contact_public) && $art->ownership->contact_public)
                                                     <p>{{ $art->ownership->email }}</p>
                                                     <p>{{ $art->ownership->phone }}</p>
+                                                    @else
+                                                    <p>不公開</p>
+                                                    @endif
                                                 </div>
                                                 <div class="single-input-item">
                                                     <h5>交易紀錄</h5>
+                                                    @if (isset($art->ownership->price_public) && $art->ownership->price_public)
                                                     <p>{{ $art->ownership->price }}</p>
+                                                    @else
+                                                    <p>不公開</p>
+                                                    @endif
                                                 </div>
                                 </div>
                                 <div class="col-lg-3"></div>

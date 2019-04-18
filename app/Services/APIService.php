@@ -18,14 +18,21 @@ class APIService {
     private static $TimeDiff;
 
     public function __construct() {
-        $this->client = new Client();
         $this->endpoint = Config::get('services.api.endpoint');
+        $this->client = new Client([ 'base_uri' => $this->endpoint ]);
         $this->access_token = Config::get('services.api.token');
+    }
+
+    private function headers() {
+        return [
+            'Authorization' => 'Bearer ' . $this->access_token
+        ];
     }
 
     private function request($path, $data=null) {
 
-        $response = $this->client->post($this->endpoint.$path, [
+        $response = $this->client->post($path, [
+            'headers' => $this->headers(),
             'form_params' => $data,
             'debug' => false,
             'http_errors' => false,
@@ -81,6 +88,52 @@ class APIService {
         return 'failed';
     }
 
+    public function upload_image($file) {
+        $response = $this->client->post('/images', [
+        // dd([
+            'headers' => $this->headers(),
+            'multipart' => [[
+                'name' => 'image',
+                'contents' => fopen($file, 'r'),
+            ]],
+            'debug' => true,
+            'http_errors' => false,
+        ]);
+
+        Log::info('API Service /images '.$response->getStatusCode().$response->getBody());
+
+        $ret = json_decode($response->getBody());
+
+        if ($response->getStatusCode() === 201) {
+            return $ret->url;
+        }
+
+        return false;
+    }
+
+    public function upload_attachment($file) {
+        $response = $this->client->post('/attachments', [
+        // dd([
+            'headers' => $this->headers(),
+            'multipart' => [[
+                'name' => 'attachment',
+                'contents' => fopen($file, 'r'),
+            ]],
+            'debug' => true,
+            'http_errors' => false,
+        ]);
+
+        Log::info('API Service /attachments '.$response->getStatusCode().$response->getBody());
+
+        $ret = json_decode($response->getBody());
+
+        if ($response->getStatusCode() === 201) {
+            return $ret;
+        }
+
+        return false;
+    }
+
     public function register_art($invitationCode, $identification, $ownership) {
         $body = [
             'invitation_code' => $invitationCode,
@@ -88,7 +141,8 @@ class APIService {
             'ownership' => $ownership,
         ];
 
-        $response = $this->client->post($this->endpoint.'/arts', [
+        $response = $this->client->post('/arts', [
+            'headers' => $this->headers(),
             'body' => json_encode($body),
             'debug' => false,
             'http_errors' => false,
@@ -105,7 +159,8 @@ class APIService {
 
     public function list_arts() {
 
-        $response = $this->client->get($this->endpoint.'/arts', [
+        $response = $this->client->get('/arts', [
+            'headers' => $this->headers(),
             'debug' => false,
             'http_errors' => false,
         ]);
@@ -121,7 +176,8 @@ class APIService {
 
     public function get_art($artId) {
 
-        $response = $this->client->get($this->endpoint.'/arts/'.$artId, [
+        $response = $this->client->get('/arts/'.$artId, [
+            'headers' => $this->headers(),
             'debug' => false,
             'http_errors' => false,
         ]);
@@ -153,7 +209,8 @@ class APIService {
             ]
         ];
 
-        $response = $this->client->post($this->endpoint.'/arts/'.$artId.'/pointers', [
+        $response = $this->client->post('/arts/'.$artId.'/pointers', [
+            'headers' => $this->headers(),
             'body' => json_encode($body),
             'debug' => false,
             'http_errors' => false,

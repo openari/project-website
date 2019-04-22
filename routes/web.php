@@ -26,6 +26,7 @@ Route::get('/arts/{artId}', 'ArtController@show');
 Route::get('/arts/{artId}/{part?}', 'ArtController@show');
 Route::get('/arts/{artId}/pointers/create', 'PointerController@create');
 Route::post('/arts/{artId}/pointers/create', 'PointerController@store');
+Route::post('/arts/{artId}/contact/create', 'ContactController@store');
 
 Route::get('/register-art', 'ArtController@create');
 Route::get('/register-step1-open-ari', 'ArtController@create_step1');
@@ -59,6 +60,7 @@ Route::post('/arts/{artId}/revision/step4', 'ArtRevisionController@store_step4')
 
 Route::get('/arts/{artId}/feedback/create', 'ArtFeedbackController@create');
 Route::post('/arts/{artId}/feedback/create', 'ArtFeedbackController@store');
+
 
 Route::get('/applications/register', 'ApplicationController@create');
 Route::post('/applications/register', 'ApplicationController@store');

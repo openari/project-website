@@ -169,9 +169,11 @@ class ArtController extends Controller
             'date_or_period' => session('newart.identification.date_or_period'),
             'maker' => session('newart.identification.maker'),
             'brief' => session('newart.identification.brief'),
-            'attachments' => session('newart.identification.attachments'),
             'image' => session('newart.identification.image'),
         ];
+        if (isset(session('newart.identification.attachments'))) {
+            $identification['attachments'] = session('newart.identification.attachments');
+        }
         $owner_public = session('newart.ownership.owner_public') ? true: false;
         $contact_public = session('newart.ownership.contact_public') ? true: false;
         $price_public = session('newart.ownership.price_public') ? true: false;

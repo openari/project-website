@@ -10,7 +10,11 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="page-header-content d-flex">
+                    @if (isset($revision))
+                    <h1>異動</h1>
+                    @else
                     <h1>讓我們一起為ＡＲI區塊鏈實驗計畫而努力</h1>
+                    @endif
                 </div>
             </div>
         </div>
@@ -59,7 +63,11 @@
                  <div class="col-lg-4">
                     <!-- Cart Calculate Area -->
                     <div class="cart-calculate-area mt-sm-30 mt-md-30">
-                        <h5 class="cal-title">申請步驟</h5>
+                            @if (isset($revision))
+                            <h5 class="cal-title">異動步驟</h5>
+                            @else
+                            <h5 class="cal-title">申請步驟</h5>
+                            @endif
 
                         <div class="cart-cal-table table-responsive">
                             <table class="table table-borderless">

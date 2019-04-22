@@ -142,7 +142,7 @@ class APIService {
         ];
 
         Log::info('API Service register_art');
-        Log::info(var_export($body));
+        Log::info(var_export($body, true));
 
         $response = $this->client->post('/arts', [
             'headers' => $this->headers(),

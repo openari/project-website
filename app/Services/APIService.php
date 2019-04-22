@@ -141,6 +141,9 @@ class APIService {
             'ownership' => $ownership,
         ];
 
+        Log::info('API Service register_art');
+        Log::info(var_dump($body));
+
         $response = $this->client->post('/arts', [
             'headers' => $this->headers(),
             'body' => json_encode($body),

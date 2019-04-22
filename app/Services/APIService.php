@@ -160,6 +160,32 @@ class APIService {
         return 'failed';
     }
 
+    public function update_an_art($artId, $invitationCode, $identification, $ownership) {
+        $body = [
+            'invitation_code' => $invitationCode,
+            'identification' => $identification,
+            'ownership' => $ownership,
+        ];
+
+        Log::info('API Service register_art');
+        Log::info(var_export($body, true));
+
+        $response = $this->client->put('/arts/'.$artId, [
+            'headers' => $this->headers(),
+            'body' => json_encode($body),
+            'debug' => false,
+            'http_errors' => false,
+        ]);
+
+        Log::info('API Service /arts '.$response->getStatusCode().$response->getBody());
+
+        if ($response->getStatusCode() === 201) {
+            return 'success';
+        }
+
+        return 'failed';
+    }
+
     public function list_arts() {
 
         $response = $this->client->get('/arts', [

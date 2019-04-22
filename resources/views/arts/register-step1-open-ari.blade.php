@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', '作品碼申請 Step-1')
+@section('title', isset($revision) ? '作品碼異動 Step-1' : '作品碼申請 Step-1')
 
 @section('headerOptions', 'black-header header-padding')
 
@@ -22,7 +22,11 @@
 <div class="page-wrapper">
     <section class="cart-page-area-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
+            @if (isset($revision))
+            <form action="{{ action('ArtRevisionController@create_step1', ['artId' => $artId ]) }}" method="post">
+            @else
             <form action="{{ action('ArtController@store_step1') }}" method="post">
+            @endif
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-12">

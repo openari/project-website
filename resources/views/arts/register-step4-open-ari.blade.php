@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', '作品碼申請 Step-4')
+@section('title', isset($revision) ? '作品碼異動 Step-4' : '作品碼申請 Step-4')
 
 @section('headerOptions', 'black-header header-padding')
 
@@ -206,10 +206,21 @@
                     </div>
 
                     <div class="shopping-cart-table table-responsive p-2">
+                        @if (isset($revision))
+                        <form action="{{ action('ArtRevisionController@create_step4', ['artId' => $artId ]) }}" method="post">
+                        @else
                         <form action="{{ action('ArtController@store_step4') }}" method="post">
+                        @endif
                             {{ csrf_field() }}
                             {!! Captcha::display() !!}
-                            <div class="proceed-checkout-btn">
+                            <div class="proceed-checkout-btn m-2 float-left">
+                                @if (isset($revision))
+                                <a href="{{ action('ArtRevisionController@create_step3', ['artId' => $artId ]) }}" class="btn btn-brand">上一步</a>
+                                @else
+                                <a href="{{ url('/register-step3-open-ari') }}" class="btn btn-brand">上一步</a>
+                                @endif
+                            </div>
+                            <div class="proceed-checkout-btn m-2 float-left">
                                 <button type="submit" class="btn btn-brand d-block w-100">完成</button>
                             </div>
                         </form>

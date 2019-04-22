@@ -29,6 +29,34 @@
             <div class="row">
 
             <div class="col-lg-12">
+
+                <!-- Message Start -->
+                @if (session('message'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <strong>{{ session('message') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                <!-- Message End -->
+
+                <!-- Alert Start -->
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>{{ $error }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endforeach
+                @endif
+                <!-- Alert End -->
+
+            </div>
+
+            <div class="col-lg-12">
                     <div class="single-sidebar-item-wrap">
                             <h1 class="sidebar-title">作品碼 {{ $art->id }}</h1>
                             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -53,7 +81,7 @@
                                             <a href="{{ url('/apply-feedback-open-ari') }}" class="btn btn-black">檢舉</a>
                                         </div>
                                         <div class="proceed-checkout-btn m-2 float-left">
-                                            <a href="{{ url('/apply-modified-open-ari') }}" class="btn btn-black">異動</a>
+                                            <a href="{{ action('ArtRevisionController@create', ['artId' => $art->id ]) }}" class="btn btn-black">異動</a>
                                         </div>
                                 </div>
                             </nav>

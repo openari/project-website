@@ -85,7 +85,7 @@
                                 <li class="dropdown-navbar arrow"><a href="#">加入</a>
                                     <ul class="dropdown-nav">
                                         <li><a href="{{ url('/artists-apply') }}">輸入邀請碼</a></li>
-                                        <li><a href="{{ url('/register-step1-open-ari') }}">作品碼申請表</a></li>
+                                        <li><a href="{{ url('/register-art') }}">作品碼申請表</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-navbar full-width"><a href="{{ url('/browse') }}">查詢</a>

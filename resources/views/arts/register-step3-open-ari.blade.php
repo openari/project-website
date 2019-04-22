@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', '作品碼申請 Step-3')
+@section('title', isset($revision) ? '作品碼異動 Step-3' : '作品碼申請 Step-3')
 
 @section('headerOptions', 'black-header header-padding')
 
@@ -22,7 +22,11 @@
 <div class="page-wrapper">
     <section class="cart-page-area-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
+            @if (isset($revision))
+            <form action="{{ action('ArtRevisionController@create_step3', ['artId' => $artId ]) }}" method="post">
+            @else
             <form action="{{ action('ArtController@store_step3') }}" method="post">
+            @endif
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-12">
@@ -138,7 +142,7 @@
                         </div>
                         <div class="single-input-item">
                                     <label for="price" class="required">交易紀錄</label>
-                                    <input type="text" id="price" name="price" placeholder="交易金額" value="{{ session('newart.ownership.price') }}" required/>
+                                    <input type="text" id="price" name="price" placeholder="交易金額" value="{{ session('newart.ownership.price') }}" />
                         </div>
                         <div class="single-input-item">
                                     <div class="custom-control custom-checkbox">
@@ -147,7 +151,11 @@
                                     </div>
                         </div>
                         <div class="proceed-checkout-btn m-2 float-left">
+                            @if (isset($revision))
+                            <a href="{{ action('ArtRevisionController@create_step2', ['artId' => $artId ]) }}" class="btn btn-brand">上一步</a>
+                            @else
                             <a href="{{ url('/register-step2-open-ari') }}" class="btn btn-brand">上一步</a>
+                            @endif
                         </div>
                         <div class="proceed-checkout-btn m-2 float-left">
                             <button type="submit" class="btn btn-brand">下一步</button>

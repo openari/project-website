@@ -67,7 +67,7 @@
                                             <a href="{{ url('/apply-feedback-open-ari') }}" class="btn btn-black">檢舉</a>
                                         </div>
                                         <div class="proceed-checkout-btn m-2 float-left">
-                                            <a href="{{ url('/apply-modified-open-ari') }}" class="btn btn-black">異動</a>
+                                            <a href="{{ action('ArtRevisionController@create', ['artId' => $art->id ]) }}" class="btn btn-black">異動</a>
                                         </div>
                                 </div>
                             </nav>
@@ -85,34 +85,28 @@
                             <table class="table table-bordered text-center">
                                 <thead>
                                 <tr>
-                                    <th>作品指向</th>
+                                    <th>標題</th>
+                                    <th>指向連結</th>
+                                    <th>描述</th>
                                     <th>時間</th>
-                                    <th colspan="2">SHA-3指紋碼</th>
-
                                 </tr>
                                 </thead>
 
                                 <tbody>
+                                @foreach($art->pointers as $pointer)
                                 <tr>
+                                    <td><span>{{ $pointer->title }}</span></td>
                                     <td class="product-list">
                                         <div class="cart-product-item d-flex align-items-center">
-                                            <a href="#" class="product-thumb">
-                                                <img src="assets/img/products/prod-01.jpg" alt="Product"/>
-                                            </a>
-                                            <a href="#" class="product-name">Metallic cotton
-                                                dress</a>
+                                            <a href="{{ $pointer->pointer_url }}" class="product-name">{{ $pointer->pointer_url }}</a>
                                         </div>
                                     </td>
+                                    <td><span>{{ $pointer->abstract }}</span></td>
                                     <td>
-                                        <span class="price">2019.04.04</span>
-                                    </td>
-                                    <td>
-                                        <span class="price">保護中</span>
-                                    </td>
-                                    <td>
-                                        <span class="price"><a href="#">download</a></span>
+                                        <span class="price">{{ \Carbon\Carbon::createFromTimestampMs($pointer->created_at)->format('Y.m.d') }}</span>
                                     </td>
                                 </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

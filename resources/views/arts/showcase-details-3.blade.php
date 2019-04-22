@@ -52,7 +52,7 @@
                                             <a href="{{ url('/apply-feedback-open-ari') }}" class="btn btn-black">檢舉</a>
                                         </div>
                                         <div class="proceed-checkout-btn m-2 float-left">
-                                            <a href="{{ url('/apply-modified-open-ari') }}" class="btn btn-black">異動</a>
+                                            <a href="{{ action('ArtRevisionController@create', ['artId' => $art->id ]) }}" class="btn btn-black">異動</a>
                                         </div>
                                 </div>
                             </nav>

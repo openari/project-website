@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', '作品碼申請 Step-2')
+@section('title', isset($revision) ? '作品碼異動 Step-2' : '作品碼申請 Step-2')
 
 @section('headerOptions', 'black-header header-padding')
 
@@ -22,7 +22,12 @@
 <div class="page-wrapper">
     <section class="cart-page-area-wrapper mt-120 mt-md-80 mt-sm-60 mb-120 mb-md-80 mb-sm-60">
         <div class="container">
+            @if (isset($revision))
+            <form action="{{ action('ArtRevisionController@create_step2', ['artId' => $artId ]) }}" method="post">
+            @else
             <form action="{{ action('ArtController@store_step2') }}" method="post">
+            @endif
+
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-12">
@@ -117,7 +122,11 @@
                                     </div>
                                 </div>
                                     <div class="proceed-checkout-btn m-2 float-left">
+                                        @if (isset($revision))
+                                        <a href="{{ action('ArtRevisionController@create_step1', ['artId' => $artId ]) }}" class="btn btn-brand">上一步</a>
+                                        @else
                                         <a href="{{ url('/register-step1-open-ari') }}" class="btn btn-brand">上一步</a>
+                                        @endif
                                     </div>
                                     <div class="proceed-checkout-btn m-2 float-left">
                                         <button type="submit" class="btn btn-brand">下一步</button>

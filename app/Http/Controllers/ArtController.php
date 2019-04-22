@@ -63,11 +63,24 @@ class ArtController extends Controller
         abort('404');
     }
 
-    public function create_step1() {
+    public function create() {
+
         $invitationCode = session('invitation_code');
 
         if (empty($invitationCode)) {
             return redirect('/artists-apply')->withErrors(['請您先輸入驗證碼!']);
+        }
+
+        session()->forget('newart');
+        session()->forget('modifyart');
+        session(['newart' => true]);
+
+        return redirect('/register-step1-open-ari');
+    }
+
+    public function create_step1() {
+        if (null == session('newart')) {
+            return redirect('/register-art');
         }
 
         return view('arts.register-step1-open-ari');
@@ -97,6 +110,10 @@ class ArtController extends Controller
     }
 
     public function create_step2() {
+        if (null == session('newart')) {
+            return redirect('/register-art');
+        }
+
         return view('arts.register-step2-open-ari');
     }
 
@@ -115,6 +132,10 @@ class ArtController extends Controller
     }
 
     public function create_step3() {
+        if (null == session('newart')) {
+            return redirect('/register-art');
+        }
+
         return view('arts.register-step3-open-ari');
     }
 
@@ -139,7 +160,10 @@ class ArtController extends Controller
     }
 
     public function create_step4() {
-        // dd(session('newart.identification.attachments'));
+        if (null == session('newart')) {
+            return redirect('/register-art');
+        }
+
         return view('arts.register-step4-open-ari');
     }
 

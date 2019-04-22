@@ -27,6 +27,7 @@ Route::get('/arts/{artId}/{part?}', 'ArtController@show');
 Route::get('/arts/{artId}/pointers/create', 'PointerController@create');
 Route::post('/arts/{artId}/pointers/create', 'PointerController@store');
 
+Route::get('/register-art', 'ArtController@create');
 Route::get('/register-step1-open-ari', 'ArtController@create_step1');
 Route::post('/register-step1-open-ari', 'ArtController@store_step1');
 
@@ -42,6 +43,19 @@ Route::post('/register-step4-open-ari', 'ArtController@store_step4');
 Route::post('/upload-art-image', 'ArtController@uploadImage');
 Route::post('/upload-art-attachment', 'ArtController@uploadAttachment');
 Route::delete('/upload-art-attachment', 'ArtController@deleteAttachment');
+
+Route::get('/arts/{artId}/revision/create', 'ArtRevisionController@create');
+Route::get('/arts/{artId}/revision/step1', 'ArtRevisionController@create_step1');
+Route::post('/arts/{artId}/revision/step1', 'ArtRevisionController@store_step1');
+
+Route::get('/arts/{artId}/revision/step2', 'ArtRevisionController@create_step2');
+Route::post('/arts/{artId}/revision/step2', 'ArtRevisionController@store_step2');
+
+Route::get('/arts/{artId}/revision/step3', 'ArtRevisionController@create_step3');
+Route::post('/arts/{artId}/revision/step3', 'ArtRevisionController@store_step3');
+
+Route::get('/arts/{artId}/revision/step4', 'ArtRevisionController@create_step4');
+Route::post('/arts/{artId}/revision/step4', 'ArtRevisionController@store_step4');
 
 Route::get('/applications/register', 'ApplicationController@create');
 Route::post('/applications/register', 'ApplicationController@store');

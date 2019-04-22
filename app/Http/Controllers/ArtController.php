@@ -171,7 +171,7 @@ class ArtController extends Controller
             'brief' => session('newart.identification.brief'),
             'image' => session('newart.identification.image'),
         ];
-        if (isset(session('newart.identification.attachments'))) {
+        if (null !== session('newart.identification.attachments')) {
             $identification['attachments'] = session('newart.identification.attachments');
         }
         $owner_public = session('newart.ownership.owner_public') ? true: false;

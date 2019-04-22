@@ -43,7 +43,7 @@
                             <!-- Checkout Coupon Accordion Start -->
                             <div class="checkoutAccordion">
                                 <div class="card">
-                                    <h3 class="float-left">作品碼：{{ $art->id }} |  作品碼連結：<a href="{{ action('ArtController@show', [ 'artId' => $art->id, 'part' => 'identification' ]) }}">{{ action('ArtController@show', [ 'artId' => $art->id ]) }}</a></h3>
+                                    <h3 class="float-left">作品碼：{{ $art->id }} |  作品碼連結：<a href="{{ action('ArtController@show', [ 'artId' => $art->id ]) }}">{{ action('ArtController@show', [ 'artId' => $art->id ]) }}</a></h3>
                                 </div>
                             </div>
                             <!-- Checkout Coupon Accordion End -->

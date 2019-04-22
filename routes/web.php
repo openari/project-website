@@ -57,12 +57,13 @@ Route::post('/arts/{artId}/revision/step3', 'ArtRevisionController@store_step3')
 Route::get('/arts/{artId}/revision/step4', 'ArtRevisionController@create_step4');
 Route::post('/arts/{artId}/revision/step4', 'ArtRevisionController@store_step4');
 
+Route::get('/arts/{artId}/feedback/create', 'ArtFeedbackController@create');
+Route::post('/arts/{artId}/feedback/create', 'ArtFeedbackController@store');
+
 Route::get('/applications/register', 'ApplicationController@create');
 Route::post('/applications/register', 'ApplicationController@store');
 
 Route::get('/your-open-ari', function () {return view('your-open-ari'); });
-Route::get('/apply-feedback-open-ari', function () {return view('apply-feedback-open-ari'); });
-Route::get('/apply-modified-open-ari', function () {return view('apply-modified-open-ari'); });
 Route::get('/3rd-party-applications', function () {return view('gallery-box'); });
 Route::get('/resources', function () {return view('3rd-open-ari'); });
 

@@ -15,6 +15,7 @@ class PointerController extends Controller
         $invitationCode = session('invitation_code');
 
         if (empty($invitationCode)) {
+            session([ 'todo' => 'pointer', 'todo_arg1' => $artId ]);
             return redirect('/artists-apply')->withErrors(['請您先輸入驗證碼!']);
         }
 

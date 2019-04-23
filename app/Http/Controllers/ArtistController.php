@@ -43,7 +43,15 @@ class ArtistController extends Controller
             'artist' => $this->apiService->get_artist($invitationCode),
         ]);
 
-        return redirect('/register-step1-open-ari');
+        $todo = session('todo', 'newart');
+        session()->forget('todo');
+        if ($todo == 'revision') {
+            return redirect(action('ArtRevisionController@create', ['artId' => session('todo_arg1') ]));
+        } else if ($todo == 'pointer') {
+            return redirect(action('PointerController@create', ['artId' => session('todo_arg1') ]));
+        } else {
+            return redirect(action('ArtController@create'));
+        }
     }
 
     public function create() {

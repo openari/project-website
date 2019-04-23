@@ -13,6 +13,7 @@ class HomeController extends Controller
     }
 
     public function index() {
+        session()->forget('invitation_code');
         $response = $this->apiService->list_arts();
         $arts = $response->arts;
         return view('index', [

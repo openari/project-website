@@ -68,6 +68,7 @@ class ArtController extends Controller
         $invitationCode = session('invitation_code');
 
         if (empty($invitationCode)) {
+            session([ 'todo' => 'newart' ]);
             return redirect('/artists-apply')->withErrors(['請您先輸入驗證碼!']);
         }
 

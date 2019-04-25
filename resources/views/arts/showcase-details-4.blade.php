@@ -94,6 +94,7 @@
                                     <th>指向連結</th>
                                     <th>描述</th>
                                     <th>時間</th>
+                                    <th>有效性</th>
                                 </tr>
                                 </thead>
 
@@ -103,12 +104,15 @@
                                     <td><span>{{ $pointer->title }}</span></td>
                                     <td class="product-list">
                                         <div class="cart-product-item d-flex align-items-center">
-                                            <a href="{{ $pointer->pointer_url }}" class="product-name">{{ $pointer->pointer_url }}</a>
+                                            <a href="{{ $pointer->pointer_url }}" class="product-name" target="_blank">{{ $pointer->pointer_url }} <i class="fa fa-external-link"></i></a>
                                         </div>
                                     </td>
                                     <td><span>{{ $pointer->abstract }}</span></td>
                                     <td>
                                         <span class="price">{{ \Carbon\Carbon::createFromTimestampMs($pointer->created_at)->format('Y.m.d') }}</span>
+                                    </td>
+                                    <td>
+                                        <a href="" onclick="validateUrl('{{ $pointer->pointer_url }}');return false;">validate</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -136,5 +140,21 @@
 
 @endsection
 
-@push('modals')
+@push('scripts')
+    <script>
+        function validateUrl(url) {
+            try {
+                var req = new XMLHttpRequest();
+                req.open('HEAD', url, false);
+                req.send(null);
+                if (req.status !== 200) {
+                    throw 'invalid';
+                }
+                $(event.target).replaceWith('有效');
+            } catch(e) {
+                $(event.target).replaceWith('失效');
+            }
+        }
+    </script>
 @endpush
+

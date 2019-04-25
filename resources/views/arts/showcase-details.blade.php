@@ -204,10 +204,10 @@
                             </div>
                             <hr>
                             <div class="shopping-cart-table table-responsive p-2">
-                            <!-- <table class="table table-bordered text-center">
+                            <table class="table table-bordered text-center">
                                 <thead>
                                 <tr>
-                                    <th>作品指向</th>
+                                    <th>描述檔案</th>
                                     <th>時間</th>
                                     <th colspan="2">SHA-3指紋碼</th>
 
@@ -215,28 +215,26 @@
                                 </thead>
 
                                 <tbody>
+                                @foreach($art->identification->attachments as $attachment)
                                 <tr>
                                     <td class="product-list">
                                         <div class="cart-product-item d-flex align-items-center">
-                                            <a href="#" class="product-thumb">
-                                                <img src="{{asset('assets/img/products/prod-01.jpg')}}" alt="Product"/>
-                                            </a>
-                                            <a href="#" class="product-name">Metallic cotton
-                                                dress</a>
+                                            <a href="{{ $attachment->url }}" class="product-name">{{ substr($attachment->url, 0, 50) }}{{ strlen($attachment->url) > 50 ? '...' : '' }}</a>
                                         </div>
                                     </td>
                                     <td>
-                                        <span class="price">2019.04.04</span>
+                                        <span class="price">{{ \Carbon\Carbon::createFromTimestampMs($art->created_at)->format('Y.m.d') }}</span>
                                     </td>
                                     <td>
                                         <span class="price">保護中</span>
                                     </td>
                                     <td>
-                                        <span class="price"><a href="#">download</a></span>
+                                        <span class="price"><a href="" onclick="downloadHash('{{$attachment->hash}}');return false;">download</a></span>
                                     </td>
                                 </tr>
+                                @endforeach
                                 </tbody>
-                            </table> -->
+                            </table>
                         </div>
                             </div>
                             <!-- End Single Sidebar Wrap -->
@@ -251,5 +249,20 @@
 
 @endsection
 
-@push('modals')
+@push('scripts')
+    <script>
+        function downloadHash(hash) {
+          var filename = 'hash.txt';
+          var element = document.createElement('a');
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(hash));
+          element.setAttribute('download', filename);
+
+          element.style.display = 'none';
+          document.body.appendChild(element);
+
+          element.click();
+
+          document.body.removeChild(element);
+        }
+    </script>
 @endpush
